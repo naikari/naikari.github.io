@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <!--Old html 4.0.1 way <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> -->
+  <!--<meta charset="UTF-8">--><!-- New HTML5 way -->
+  <!-- Mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Favourite icon -->
+  <link rel="apple-touch-icon" href="https://naikari.github.io/favicon.png">
+  <link rel="icon" type="image/png" href="https://naikari.github.io/favicon.png">
+  <link rel="shortcut icon" type="image/x-icon" href="https://naikari.github.io/favicon.ico">
+  <link rel="stylesheet" href="../ldoc.css"><!-- CSS -->
+  <link rel="stylesheet" href=https://naikari.github.io/style.css><!-- CSS -->
+  <title>Naikari Lua API</title><!-- Website information -->
+</head>
+<body>
+    <h1 class="header"><img src="https://naikari.github.io/images/logo.png" alt="Naikari"></h1>
+    <nav class="header">
+        <ul>
+            <li><a href="https://naikari.github.io/index.html">Home</a></li>
+            <li><a href="https://naikari.github.io/screenshots.html">Screenshots</a></li>
+            <li><a href="https://naikari.github.io/download.html">Download</a></li>
+            <li><a href="https://naikari.github.io/contact.html">Contact</a></li>
+            <li><a href="https://github.com/naikari/naikari">Project Page</a></li>
+            <li><a href="https://liberapay.com/diligentcircle/">Liberapay</a></li>
+            <li><a href="https://www.patreon.com/diligentcircle">Patreon</a></li>
+        </ul>
+    </nav>
+
+<div id="lDoc_container">
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Naikari Lua API</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../modules/ai.html">ai</a></li>
+  <li><a href="../modules/lmusic.html">lmusic</a></li>
+  <li><a href="../modules/love_shaders.html">love_shaders</a></li>
+  <li><a href="../modules/audio.html">audio</a></li>
+  <li><a href="../modules/bkg.html">bkg</a></li>
+  <li><a href="../modules/camera.html">camera</a></li>
+  <li><a href="../modules/canvas.html">canvas</a></li>
+  <li><a href="../modules/colour.html">colour</a></li>
+  <li><a href="../modules/commodity.html">commodity</a></li>
+  <li><a href="../modules/data.html">data</a></li>
+  <li><a href="../modules/debug.html">debug</a></li>
+  <li><a href="../modules/diff.html">diff</a></li>
+  <li><a href="../modules/evt.html">evt</a></li>
+  <li><a href="../modules/faction.html">faction</a></li>
+  <li><a href="../modules/file.html">file</a></li>
+  <li><a href="../modules/font.html">font</a></li>
+  <li><a href="../modules/gfx.html">gfx</a></li>
+  <li><a href="../modules/gui.html">gui</a></li>
+  <li><a href="../modules/hook.html">hook</a></li>
+  <li><a href="../modules/jump.html">jump</a></li>
+  <li><a href="../modules/linopt.html">linopt</a></li>
+  <li><a href="../modules/misn.html">misn</a></li>
+  <li><a href="../modules/music.html">music</a></li>
+  <li><a href="../modules/naev.html">naev</a></li>
+  <li><a href="../modules/news.html">news</a></li>
+  <li><strong>outfit</strong></li>
+  <li><a href="../modules/pilot.html">pilot</a></li>
+  <li><a href="../modules/pilotoutfit.html">pilotoutfit</a></li>
+  <li><a href="../modules/planet.html">planet</a></li>
+  <li><a href="../modules/player.html">player</a></li>
+  <li><a href="../modules/rnd.html">rnd</a></li>
+  <li><a href="../modules/shader.html">shader</a></li>
+  <li><a href="../modules/ship.html">ship</a></li>
+  <li><a href="../modules/shiplog.html">shiplog</a></li>
+  <li><a href="../modules/system.html">system</a></li>
+  <li><a href="../modules/tex.html">tex</a></li>
+  <li><a href="../modules/time.html">time</a></li>
+  <li><a href="../modules/tk.html">tk</a></li>
+  <li><a href="../modules/transform.html">transform</a></li>
+  <li><a href="../modules/var.html">var</a></li>
+  <li><a href="../modules/vec2.html">vec2</a></li>
+  <li><a href="../modules/portrait.html">portrait</a></li>
+  <li><a href="../modules/pp_shaders.html">pp_shaders</a></li>
+  <li><a href="../modules/prng.html">prng</a></li>
+  <li><a href="../modules/vn.html">vn</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>outfit</code></h1>
+<p>Lua bindings to interact with outfits.</p>
+<p>
+<p> This will allow you to create and manipulate outfits in-game.
+<p> An example would be:
+ <pre>
+ o = outfit.get( "Heavy Laser" ) -- Gets the outfit by name
+ cpu_usage = o:cpu() -- Gets the cpu usage of the outfit
+ slot_name, slot_size = o:slot() -- Gets slot information about the outfit
+ </pre>
+</p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#__eq">__eq (o1, o2)</a></td>
+	<td class="summary">Checks to see if two outfits are the same.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#get">get (s)</a></td>
+	<td class="summary">Gets a outfit.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#get">get ()</a></td>
+	<td class="summary">Gets all the outfits.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#name">name (s)</a></td>
+	<td class="summary">Gets the translated name of the outfit.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#nameRaw">nameRaw (s)</a></td>
+	<td class="summary">Gets the raw (untranslated) name of the outfit.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#type">type (o)</a></td>
+	<td class="summary">Gets the type of an outfit.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#typeBroad">typeBroad (o)</a></td>
+	<td class="summary">Gets the broad type of an outfit.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#cpu">cpu (o)</a></td>
+	<td class="summary">Gets the cpu usage of an outfit.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#mass">mass (o)</a></td>
+	<td class="summary">Gets the mass of an outfit.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#slot">slot (o)</a></td>
+	<td class="summary">Gets the slot name, size and property of an outfit.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#limit">limit (o)</a></td>
+	<td class="summary">Gets the limit string of the outfit.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#icon">icon (o)</a></td>
+	<td class="summary">Gets the store icon for an outfit.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#price">price (o)</a></td>
+	<td class="summary">Gets the price of an outfit.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#description">description (o)</a></td>
+	<td class="summary">Gets the description of an outfit.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#unique">unique (o)</a></td>
+	<td class="summary">Gets whether or not an outfit is unique</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#shipstat">shipstat (o[, name=nil[, internal=false]])</a></td>
+	<td class="summary">Gets a shipstat from an Outfit by name, or a table containing all the ship stats if not specified.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#weapstats">weapstats (o[, p=nil])</a></td>
+	<td class="summary">Computes statistics for weapons.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#specificstats">specificstats ()</a></td>
+	<td class="summary">Returns raw data specific to each outfit type.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "__eq"></a>
+    <strong>__eq (o1, o2)</strong>
+    </dt>
+    <dd>
+    Checks to see if two outfits are the same.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">o1</span>
+            <span class="types"><span class="type">Outfit</span></span>
+         First outfit to compare.
+        </li>
+        <li><span class="parameter">o2</span>
+            <span class="types"><span class="type">Outfit</span></span>
+         Second outfit to compare.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">boolean</span></span>
+        true if both outfits are the same.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">if</span> o1 == o2 <span class="keyword">then</span> <span class="comment">-- Checks to see if outfit o1 and o2 are the same</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "get"></a>
+    <strong>get (s)</strong>
+    </dt>
+    <dd>
+    Gets a outfit.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">s</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Raw (untranslated) name of the outfit to get.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">Outfit</span> or <span class="type">nil</span></span>
+        The outfit matching name or nil if error.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">s = outfit.get( <span class="string">"Heavy Laser"</span> ) <span class="comment">-- Gets the heavy laser</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "get"></a>
+    <strong>get ()</strong>
+    </dt>
+    <dd>
+    Gets all the outfits.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">Table</span></span>
+        Table containing all the outfits.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "name"></a>
+    <strong>name (s)</strong>
+    </dt>
+    <dd>
+    Gets the translated name of the outfit.
+<p> This translated name should be used for display purposes (e.g.
+ messages). It cannot be used as an identifier for the outfit; for
+ that, use outfit.nameRaw() instead.
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">s</span>
+            <span class="types"><span class="type">Outfit</span></span>
+         Outfit to get the translated name of.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        The translated name of the outfit.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">outfitname = s:name() <span class="comment">-- Equivalent to `_(s:nameRaw())`</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "nameRaw"></a>
+    <strong>nameRaw (s)</strong>
+    </dt>
+    <dd>
+    Gets the raw (untranslated) name of the outfit.
+<p> This untranslated name should be used for identification purposes
+ (e.g. can be passed to outfit.get()). It should not be used directly
+ for display purposes without manually translating it with _().
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">s</span>
+            <span class="types"><span class="type">Outfit</span></span>
+         Outfit to get the raw name of.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        The raw name of the outfit.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">outfitrawname = s:nameRaw()</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "type"></a>
+    <strong>type (o)</strong>
+    </dt>
+    <dd>
+    Gets the type of an outfit.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">o</span>
+            <span class="types"><span class="type">Outfit</span></span>
+         Outfit to get information of.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        The name of the outfit type (in English).
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="global">print</span>( o:<span class="global">type</span>() ) <span class="comment">-- Prints the type of the outfit</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "typeBroad"></a>
+    <strong>typeBroad (o)</strong>
+    </dt>
+    <dd>
+    Gets the broad type of an outfit.
+<p> This name is more generic and vague than type().
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">o</span>
+            <span class="types"><span class="type">Outfit</span></span>
+         Outfit to get information of.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        The name of the outfit broad type (in English).
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="global">print</span>( o:typeBroad() ) <span class="comment">-- Prints the broad type of the outfit</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "cpu"></a>
+    <strong>cpu (o)</strong>
+    </dt>
+    <dd>
+    Gets the cpu usage of an outfit.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">o</span>
+            <span class="types"><span class="type">Outfit</span></span>
+         Outfit to get information of.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        The amount of cpu the outfit uses.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="global">print</span>( o:cpu() ) <span class="comment">-- Prints the cpu usage of an outfit</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "mass"></a>
+    <strong>mass (o)</strong>
+    </dt>
+    <dd>
+    Gets the mass of an outfit.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">o</span>
+            <span class="types"><span class="type">Outfit</span></span>
+         Outfit to get information of.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        The amount of mass the outfit uses.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="global">print</span>( o:mass() ) <span class="comment">-- Prints the mass of an outfit</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "slot"></a>
+    <strong>slot (o)</strong>
+    </dt>
+    <dd>
+    Gets the slot name, size and property of an outfit.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">o</span>
+            <span class="types"><span class="type">Outfit</span></span>
+         Outfit to get information of.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        Human readable name (in English).</li>
+        <li>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        Human readable size (in English).</li>
+        <li>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        Human readable property (in English).</li>
+        <li>
+           <span class="types"><span class="type">boolean</span></span>
+        Slot is required.</li>
+        <li>
+           <span class="types"><span class="type">boolean</span></span>
+        Slot is exclusive.</li>
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">slot_name, slot_size, slot_prop = o:slot() <span class="comment">-- Gets an outfit's slot info</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "limit"></a>
+    <strong>limit (o)</strong>
+    </dt>
+    <dd>
+    Gets the limit string of the outfit.  Only one outfit can be equipped at the same time for each limit string.
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">o</span>
+            <span class="types"><span class="type">Outfit</span></span>
+         Outfit to get information of.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">nil</span></span>
+        Limit string or nil if not applicable.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "icon"></a>
+    <strong>icon (o)</strong>
+    </dt>
+    <dd>
+    Gets the store icon for an outfit.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">o</span>
+            <span class="types"><span class="type">Outfit</span></span>
+         Outfit to get information of.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">Tex</span></span>
+        The texture containing the icon of the outfit.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">ico = o:icon() <span class="comment">-- Gets the shop icon for an outfit</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "price"></a>
+    <strong>price (o)</strong>
+    </dt>
+    <dd>
+    Gets the price of an outfit.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">o</span>
+            <span class="types"><span class="type">String</span></span>
+         Outfit to get the price of.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        The price, in credits.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">price = o:price()</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "description"></a>
+    <strong>description (o)</strong>
+    </dt>
+    <dd>
+    Gets the description of an outfit.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">o</span>
+            <span class="types"><span class="type">String</span></span>
+         Outfit to get the description of.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        The description (without translating).
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">description = o:description()</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "unique"></a>
+    <strong>unique (o)</strong>
+    </dt>
+    <dd>
+    Gets whether or not an outfit is unique
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">o</span>
+            <span class="types"><span class="type">String</span></span>
+         Outfit to get the uniqueness of.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">boolean</span></span>
+        The uniqueness of the outfit.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">isunique = o:unique()</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "shipstat"></a>
+    <strong>shipstat (o[, name=nil[, internal=false]])</strong>
+    </dt>
+    <dd>
+    Gets a shipstat from an Outfit by name, or a table containing all the ship stats if not specified.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">o</span>
+            <span class="types"><span class="type">Outfit</span></span>
+         Outfit to get ship stat of.
+        </li>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Name of the ship stat to get.
+         (<em>default</em> nil)
+        </li>
+        <li><span class="parameter">internal</span>
+            <span class="types"><span class="type">boolean</span></span>
+         Whether or not to use the internal representation.
+         (<em>default</em> false)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Value of the ship stat or a tale containing all the ship stats if name is not specified.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "weapstats"></a>
+    <strong>weapstats (o[, p=nil])</strong>
+    </dt>
+    <dd>
+    Computes statistics for weapons.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">o</span>
+            <span class="types"><span class="type">Outfit</span></span>
+         Outfit to compute for.
+        </li>
+        <li><span class="parameter">p</span>
+            <span class="types"><span class="type">Pilot</span></span>
+         Pilot to use ship stats when computing.
+         (<em>default</em> nil)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+           <span class="types"><span class="type">number</span></span>
+        Damage per second of the outfit.</li>
+        <li>
+           <span class="types"><span class="type">number</span></span>
+        Disable per second of the outfit.</li>
+        <li>
+           <span class="types"><span class="type">number</span></span>
+        Energy per second of the outfit.</li>
+        <li>
+           <span class="types"><span class="type">number</span></span>
+        Range of the outfit.</li>
+        <li>
+           <span class="types"><span class="type">number</span></span>
+        lockon Time to lockon.</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "specificstats"></a>
+    <strong>specificstats ()</strong>
+    </dt>
+    <dd>
+    Returns raw data specific to each outfit type.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">A</span></span>
+        table containing the raw values.
+    </ol>
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2021-07-18 13:54:10 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+
+<div class="footer">
+    <p class="col-xs-12 col-sm-6 text-left">© 2021 Naev and Naikari development teams</p>
+            <p class="col-xs-12 col-sm-6 text-right">Original content licensed under CC BY-SA 4.0</p>
+</div>
+</body>
+</html>

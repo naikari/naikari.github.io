@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <!--Old html 4.0.1 way <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> -->
+  <!--<meta charset="UTF-8">--><!-- New HTML5 way -->
+  <!-- Mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Favourite icon -->
+  <link rel="apple-touch-icon" href="https://naikari.github.io/favicon.png">
+  <link rel="icon" type="image/png" href="https://naikari.github.io/favicon.png">
+  <link rel="shortcut icon" type="image/x-icon" href="https://naikari.github.io/favicon.ico">
+  <link rel="stylesheet" href="ldoc.css"><!-- CSS -->
+  <link rel="stylesheet" href=https://naikari.github.io/style.css><!-- CSS -->
+  <title>Naikari Lua API</title><!-- Website information -->
+</head>
+<body>
+    <h1 class="header"><img src="https://naikari.github.io/images/logo.png" alt="Naikari"></h1>
+    <nav class="header">
+        <ul>
+            <li><a href="https://naikari.github.io/index.html">Home</a></li>
+            <li><a href="https://naikari.github.io/screenshots.html">Screenshots</a></li>
+            <li><a href="https://naikari.github.io/download.html">Download</a></li>
+            <li><a href="https://naikari.github.io/contact.html">Contact</a></li>
+            <li><a href="https://github.com/naikari/naikari">Project Page</a></li>
+            <li><a href="https://liberapay.com/diligentcircle/">Liberapay</a></li>
+            <li><a href="https://www.patreon.com/diligentcircle">Patreon</a></li>
+        </ul>
+    </nav>
+
+<div id="lDoc_container">
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Naikari Lua API</h1>
+
+
+
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="modules/ai.html">ai</a></li>
+  <li><a href="modules/lmusic.html">lmusic</a></li>
+  <li><a href="modules/love_shaders.html">love_shaders</a></li>
+  <li><a href="modules/audio.html">audio</a></li>
+  <li><a href="modules/bkg.html">bkg</a></li>
+  <li><a href="modules/camera.html">camera</a></li>
+  <li><a href="modules/canvas.html">canvas</a></li>
+  <li><a href="modules/colour.html">colour</a></li>
+  <li><a href="modules/commodity.html">commodity</a></li>
+  <li><a href="modules/data.html">data</a></li>
+  <li><a href="modules/debug.html">debug</a></li>
+  <li><a href="modules/diff.html">diff</a></li>
+  <li><a href="modules/evt.html">evt</a></li>
+  <li><a href="modules/faction.html">faction</a></li>
+  <li><a href="modules/file.html">file</a></li>
+  <li><a href="modules/font.html">font</a></li>
+  <li><a href="modules/gfx.html">gfx</a></li>
+  <li><a href="modules/gui.html">gui</a></li>
+  <li><a href="modules/hook.html">hook</a></li>
+  <li><a href="modules/jump.html">jump</a></li>
+  <li><a href="modules/linopt.html">linopt</a></li>
+  <li><a href="modules/misn.html">misn</a></li>
+  <li><a href="modules/music.html">music</a></li>
+  <li><a href="modules/naev.html">naev</a></li>
+  <li><a href="modules/news.html">news</a></li>
+  <li><a href="modules/outfit.html">outfit</a></li>
+  <li><a href="modules/pilot.html">pilot</a></li>
+  <li><a href="modules/pilotoutfit.html">pilotoutfit</a></li>
+  <li><a href="modules/planet.html">planet</a></li>
+  <li><a href="modules/player.html">player</a></li>
+  <li><a href="modules/rnd.html">rnd</a></li>
+  <li><a href="modules/shader.html">shader</a></li>
+  <li><a href="modules/ship.html">ship</a></li>
+  <li><a href="modules/shiplog.html">shiplog</a></li>
+  <li><a href="modules/system.html">system</a></li>
+  <li><a href="modules/tex.html">tex</a></li>
+  <li><a href="modules/time.html">time</a></li>
+  <li><a href="modules/tk.html">tk</a></li>
+  <li><a href="modules/transform.html">transform</a></li>
+  <li><a href="modules/var.html">var</a></li>
+  <li><a href="modules/vec2.html">vec2</a></li>
+  <li><a href="modules/portrait.html">portrait</a></li>
+  <li><a href="modules/pp_shaders.html">pp_shaders</a></li>
+  <li><a href="modules/prng.html">prng</a></li>
+  <li><a href="modules/vn.html">vn</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+
+<div id="product">
+  <h2>Naikari Lua API</h2>
+  <div id="product_description">      <p style="text-align: center;">This is the API used in Naikari to interact with the game from Lua.</p>
+      <p><a href="http://www.lua.org">Lua</a> is a relatively simple scripting language used for a large portion of Naikari's content. Missions, events, GUIs and AIs are all written using Lua and Naikari's API, as are many minor features such as system backgrounds, reputation handling and others.</p>
+      <p>The API documentation provides common usage examples for each function.</p>
+      <p>Most API modules can also be used from the in-game Lua console (accessible by pressing <strong>F2</strong> by default) for <span style="text-decoration: line-through;">cheating</span> <em>experimenting</em> to your heart's content.</p>
+</div>
+</div>
+
+<h2>Modules</h2>
+<table class="module_list">
+	<tr>
+		<td class="name"  nowrap><a href="modules/ai.html">ai</a></td>
+		<td class="summary">Controls the Pilot AI.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/lmusic.html">lmusic</a></td>
+		<td class="summary">Small music handling library.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/love_shaders.html">love_shaders</a></td>
+		<td class="summary">A module containing a diversity of Love2D shaders for use in Naev.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/audio.html">audio</a></td>
+		<td class="summary">Lua bindings to interact with audio.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/bkg.html">bkg</a></td>
+		<td class="summary">Lua bindings to interact with the background.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/camera.html">camera</a></td>
+		<td class="summary">Lua bindings to interact with the Camera.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/canvas.html">canvas</a></td>
+		<td class="summary">Lua bindings to interact with canvass.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/colour.html">colour</a></td>
+		<td class="summary">Lua bindings to interact with colours.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/commodity.html">commodity</a></td>
+		<td class="summary">Lua bindings to interact with commodities.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/data.html">data</a></td>
+		<td class="summary">Lua bindings to interact with datas.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/debug.html">debug</a></td>
+		<td class="summary">Handles the Lua debug bindings.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/diff.html">diff</a></td>
+		<td class="summary">Lua bindings to apply/remove Universe Diffs.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/evt.html">evt</a></td>
+		<td class="summary">Event system Lua bindings.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/faction.html">faction</a></td>
+		<td class="summary">Lua bindings to deal with factions.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/file.html">file</a></td>
+		<td class="summary">Lua bindings to interact with files.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/font.html">font</a></td>
+		<td class="summary">Lua bindings to interact with fonts.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/gfx.html">gfx</a></td>
+		<td class="summary">Lua bindings to interact with rendering and the Naev graphical environment.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/gui.html">gui</a></td>
+		<td class="summary">Lua bindings to interact with the GUI elements.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/hook.html">hook</a></td>
+		<td class="summary">Lua bindings to manipulate hooks.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/jump.html">jump</a></td>
+		<td class="summary">This module allows you to handle the jumps from Lua.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/linopt.html">linopt</a></td>
+		<td class="summary">Lua bindings to interact with linopts.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/misn.html">misn</a></td>
+		<td class="summary">Mission Lua bindings.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/music.html">music</a></td>
+		<td class="summary">Music Lua module.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/naev.html">naev</a></td>
+		<td class="summary">Naev generic Lua bindings.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/news.html">news</a></td>
+		<td class="summary">Lua bindings to interact with the news.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/outfit.html">outfit</a></td>
+		<td class="summary">Lua bindings to interact with outfits.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/pilot.html">pilot</a></td>
+		<td class="summary">Lua bindings to interact with pilots.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/pilotoutfit.html">pilotoutfit</a></td>
+		<td class="summary">Lua bindings to interact with pilot outfits.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/planet.html">planet</a></td>
+		<td class="summary">This module allows you to handle the planets from Lua.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/player.html">player</a></td>
+		<td class="summary">Lua bindings to interact with the player.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/rnd.html">rnd</a></td>
+		<td class="summary">Bindings for interacting with the random number generator.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/shader.html">shader</a></td>
+		<td class="summary">Lua bindings to interact with shaders.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/ship.html">ship</a></td>
+		<td class="summary">Lua bindings to interact with ships.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/shiplog.html">shiplog</a></td>
+		<td class="summary">Bindings for adding log entries to the ship log.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/system.html">system</a></td>
+		<td class="summary">Lua system module.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/tex.html">tex</a></td>
+		<td class="summary">Lua bindings to interact with OpenGL textures.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/time.html">time</a></td>
+		<td class="summary">Bindings for interacting with the time.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/tk.html">tk</a></td>
+		<td class="summary">Bindings for interacting with the Toolkit.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/transform.html">transform</a></td>
+		<td class="summary">Lua bindings to interact with transforms.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/var.html">var</a></td>
+		<td class="summary">Mission variable Lua bindings.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/vec2.html">vec2</a></td>
+		<td class="summary">Represents a 2D vector in Lua.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/portrait.html">portrait</a></td>
+		<td class="summary">Functions for handling portraits in Naev.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/pp_shaders.html">pp_shaders</a></td>
+		<td class="summary">Post-processing shader library for Lua.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/prng.html">prng</a></td>
+		<td class="summary">Simple deterministic Lua PRNG.</td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="modules/vn.html">vn</a></td>
+		<td class="summary">Visual Novel API for Naev</td>
+	</tr>
+</table>
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2021-07-18 13:54:10 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+
+<div class="footer">
+    <p class="col-xs-12 col-sm-6 text-left">© 2021 Naev and Naikari development teams</p>
+            <p class="col-xs-12 col-sm-6 text-right">Original content licensed under CC BY-SA 4.0</p>
+</div>
+</body>
+</html>

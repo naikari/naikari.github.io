@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <!--Old html 4.0.1 way <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> -->
+  <!--<meta charset="UTF-8">--><!-- New HTML5 way -->
+  <!-- Mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Favourite icon -->
+  <link rel="apple-touch-icon" href="https://naikari.github.io/favicon.png">
+  <link rel="icon" type="image/png" href="https://naikari.github.io/favicon.png">
+  <link rel="shortcut icon" type="image/x-icon" href="https://naikari.github.io/favicon.ico">
+  <link rel="stylesheet" href="../ldoc.css"><!-- CSS -->
+  <link rel="stylesheet" href=https://naikari.github.io/style.css><!-- CSS -->
+  <title>Naikari Lua API</title><!-- Website information -->
+</head>
+<body>
+    <h1 class="header"><img src="https://naikari.github.io/images/logo.png" alt="Naikari"></h1>
+    <nav class="header">
+        <ul>
+            <li><a href="https://naikari.github.io/index.html">Home</a></li>
+            <li><a href="https://naikari.github.io/screenshots.html">Screenshots</a></li>
+            <li><a href="https://naikari.github.io/download.html">Download</a></li>
+            <li><a href="https://naikari.github.io/contact.html">Contact</a></li>
+            <li><a href="https://github.com/naikari/naikari">Project Page</a></li>
+            <li><a href="https://liberapay.com/diligentcircle/">Liberapay</a></li>
+            <li><a href="https://www.patreon.com/diligentcircle">Patreon</a></li>
+        </ul>
+    </nav>
+
+<div id="lDoc_container">
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Naikari Lua API</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../modules/ai.html">ai</a></li>
+  <li><a href="../modules/lmusic.html">lmusic</a></li>
+  <li><a href="../modules/love_shaders.html">love_shaders</a></li>
+  <li><a href="../modules/audio.html">audio</a></li>
+  <li><a href="../modules/bkg.html">bkg</a></li>
+  <li><a href="../modules/camera.html">camera</a></li>
+  <li><a href="../modules/canvas.html">canvas</a></li>
+  <li><a href="../modules/colour.html">colour</a></li>
+  <li><a href="../modules/commodity.html">commodity</a></li>
+  <li><a href="../modules/data.html">data</a></li>
+  <li><a href="../modules/debug.html">debug</a></li>
+  <li><a href="../modules/diff.html">diff</a></li>
+  <li><a href="../modules/evt.html">evt</a></li>
+  <li><a href="../modules/faction.html">faction</a></li>
+  <li><a href="../modules/file.html">file</a></li>
+  <li><a href="../modules/font.html">font</a></li>
+  <li><a href="../modules/gfx.html">gfx</a></li>
+  <li><a href="../modules/gui.html">gui</a></li>
+  <li><a href="../modules/hook.html">hook</a></li>
+  <li><a href="../modules/jump.html">jump</a></li>
+  <li><a href="../modules/linopt.html">linopt</a></li>
+  <li><a href="../modules/misn.html">misn</a></li>
+  <li><a href="../modules/music.html">music</a></li>
+  <li><a href="../modules/naev.html">naev</a></li>
+  <li><a href="../modules/news.html">news</a></li>
+  <li><a href="../modules/outfit.html">outfit</a></li>
+  <li><a href="../modules/pilot.html">pilot</a></li>
+  <li><a href="../modules/pilotoutfit.html">pilotoutfit</a></li>
+  <li><a href="../modules/planet.html">planet</a></li>
+  <li><a href="../modules/player.html">player</a></li>
+  <li><a href="../modules/rnd.html">rnd</a></li>
+  <li><a href="../modules/shader.html">shader</a></li>
+  <li><a href="../modules/ship.html">ship</a></li>
+  <li><a href="../modules/shiplog.html">shiplog</a></li>
+  <li><a href="../modules/system.html">system</a></li>
+  <li><a href="../modules/tex.html">tex</a></li>
+  <li><a href="../modules/time.html">time</a></li>
+  <li><a href="../modules/tk.html">tk</a></li>
+  <li><a href="../modules/transform.html">transform</a></li>
+  <li><a href="../modules/var.html">var</a></li>
+  <li><a href="../modules/vec2.html">vec2</a></li>
+  <li><strong>portrait</strong></li>
+  <li><a href="../modules/pp_shaders.html">pp_shaders</a></li>
+  <li><a href="../modules/prng.html">prng</a></li>
+  <li><a href="../modules/vn.html">vn</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>portrait</code></h1>
+<p>Functions for handling portraits in Naev.</p>
+<p>
+[[</p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#getMale">getMale ([faction="neutral"])</a></td>
+	<td class="summary">Choose a random male civilian portrait.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#getFemale">getFemale ([faction="neutral"])</a></td>
+	<td class="summary">Choose a random female civilian portrait.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#get">get ([faction="neutral"])</a></td>
+	<td class="summary">Choose a random civilian portrait of any gender.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#getMaleMil">getMaleMil ([faction="neutral"])</a></td>
+	<td class="summary">Choose a random male military portrait.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#getFemaleMil">getFemaleMil ([faction="neutral"])</a></td>
+	<td class="summary">Choose a random female military portrait.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#getMil">getMil ([faction="neutral"])</a></td>
+	<td class="summary">Choose a random military portrait of any gender.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#getFullPath">getFullPath (str)</a></td>
+	<td class="summary">Gets the full path of a portrait relative to the data directory.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "getMale"></a>
+    <strong>getMale ([faction="neutral"])</strong>
+    </dt>
+    <dd>
+    Choose a random male civilian portrait.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">faction</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Name of faction to get a portrait for, or nil for neutral.
+         (<em>default</em> "neutral")
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">misn.setNPC( <span class="string">"Sam"</span>, getMale( <span class="string">"Pirate"</span> ), description )</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "getFemale"></a>
+    <strong>getFemale ([faction="neutral"])</strong>
+    </dt>
+    <dd>
+    Choose a random female civilian portrait.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">faction</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Name of faction to get a portrait for, or nil for neutral.
+         (<em>default</em> "neutral")
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">misn.setNPC( <span class="string">"Sam"</span>, getFemale(), description )</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "get"></a>
+    <strong>get ([faction="neutral"])</strong>
+    </dt>
+    <dd>
+    Choose a random civilian portrait of any gender.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">faction</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Name of faction to get a portrait for, or nil for neutral.
+         (<em>default</em> "neutral")
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">misn.setNPC( <span class="string">"Sam"</span>, get( <span class="string">"Empire"</span> ), description )</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "getMaleMil"></a>
+    <strong>getMaleMil ([faction="neutral"])</strong>
+    </dt>
+    <dd>
+    Choose a random male military portrait.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">faction</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Name of faction to get a portrait for, or nil for neutral.
+         (<em>default</em> "neutral")
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">misn.setNPC( <span class="string">"Sam"</span>, getMaleMil( <span class="string">"Pirate"</span> ), description )</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "getFemaleMil"></a>
+    <strong>getFemaleMil ([faction="neutral"])</strong>
+    </dt>
+    <dd>
+    Choose a random female military portrait.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">faction</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Name of faction to get a portrait for, or nil for neutral.
+         (<em>default</em> "neutral")
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">misn.setNPC( <span class="string">"Sam"</span>, getFemaleMil( <span class="string">"Dvaered"</span> ), description )</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "getMil"></a>
+    <strong>getMil ([faction="neutral"])</strong>
+    </dt>
+    <dd>
+    Choose a random military portrait of any gender.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">faction</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Name of faction to get a portrait for, or nil for neutral.
+         (<em>default</em> "neutral")
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">misn.setNPC( <span class="string">"Sam"</span>, getMil( <span class="string">"Empire"</span> ), description )</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "getFullPath"></a>
+    <strong>getFullPath (str)</strong>
+    </dt>
+    <dd>
+    Gets the full path of a portrait relative to the data directory.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">str</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Name of the portrait image to get.
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">portrait.getFullPath( portrait.get() )</pre>
+    </ul>
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2021-07-18 13:54:10 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+
+<div class="footer">
+    <p class="col-xs-12 col-sm-6 text-left">© 2021 Naev and Naikari development teams</p>
+            <p class="col-xs-12 col-sm-6 text-right">Original content licensed under CC BY-SA 4.0</p>
+</div>
+</body>
+</html>
