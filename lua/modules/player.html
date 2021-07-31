@@ -182,11 +182,11 @@
 	<td class="summary">Stops the players autonav if active.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#autonavReset">autonavReset ([timer=0.])</a></td>
+	<td class="name" nowrap><a href="#autonavReset">autonavReset ([timer=0])</a></td>
 	<td class="summary">Resets the game speed without disabling autonav.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#cinematics">cinematics (enable, options)</a></td>
+	<td class="name" nowrap><a href="#cinematics">cinematics ([enable=false[, options]])</a></td>
 	<td class="summary">Puts the game in cinematics mode or back to regular mode.</td>
 	</tr>
 	<tr>
@@ -227,7 +227,7 @@
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#ships">ships ()</a></td>
-	<td class="summary">Gets the names of the player's ships.</td>
+	<td class="summary">Gets information about the player's ships.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#shipOutfits">shipOutfits (name)</a></td>
@@ -742,6 +742,8 @@
     </dt>
     <dd>
     Stops the players autonav if active.
+<p> <em>Note</em> Does not do anything if the player is not in autonav.
+
 
 
     <h3>Parameters:</h3>
@@ -757,15 +759,14 @@
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">sys, jumps = player.autonavAbort()
-
-&lt;em&gt;Note&lt;/em&gt; Does <span class="keyword">not</span> <span class="keyword">do</span> anything <span class="keyword">if</span> the player is <span class="keyword">not</span> <span class="keyword">in</span> autonav.</pre>
+        <li><pre class="example">player.autonavAbort()</pre></li>
+        <li><pre class="example">player.autonavAbort(_(<span class="string">"Your engines malfunctioned!"</span>))</pre></li>
     </ul>
 
 </dd>
     <dt>
     <a name = "autonavReset"></a>
-    <strong>autonavReset ([timer=0.])</strong>
+    <strong>autonavReset ([timer=0])</strong>
     </dt>
     <dd>
     Resets the game speed without disabling autonav.
@@ -777,40 +778,9 @@
     <ul>
         <li><span class="parameter">timer</span>
             <span class="types"><span class="type">number</span></span>
-         How many seconds to wait before starting autonav up again.
-         (<em>default</em> 0.)
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "cinematics"></a>
-    <strong>cinematics (enable, options)</strong>
-    </dt>
-    <dd>
-    Puts the game in cinematics mode or back to regular mode.
-<p> Possible options are:<br/>
- <ul>
-  <li>abort : (string) autonav abort message</li>
-  <li>no2x : (boolean) whether to prevent the player from increasing the speed, default false</li>
-  <li>gui : (boolean) enables the player's gui, default disabled</li>
- </ul>
-
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">enable</span>
-            <span class="types"><span class="type">boolean</span></span>
-         If true sets cinematics mode, if false disables. Defaults to disable.
-        </li>
-        <li><span class="parameter">options</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
-         Table of options.
+         How many seconds to wait before
+       starting autonav up again.
+         (<em>default</em> 0)
         </li>
     </ul>
 
@@ -819,7 +789,56 @@
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">player.cinematics( <span class="keyword">true</span>, { gui = <span class="keyword">true</span> } ) <span class="comment">-- Enables cinematics without hiding gui.</span></pre>
+        <li><pre class="example"><span class="comment">-- Resets speed, then immediately resumes time compression
+</span>player.autonavReset()</pre></li>
+        <li><pre class="example"><span class="comment">-- Resets speed for 3 seconds
+</span>player.autonavReset(<span class="number">3</span>)</pre></li>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "cinematics"></a>
+    <strong>cinematics ([enable=false[, options]])</strong>
+    </dt>
+    <dd>
+    Puts the game in cinematics mode or back to regular mode.
+<p> Possible values to pass to the table of options are:<br/>
+ <ul>
+  <li>"abort" (string): Autonav abort message.</li>
+  <li>"no2x" (boolean): Whether to prevent the player from increasing
+       the speed of the game. Defaults to false.</li>
+  <li>"gui" (boolean): Whether to enable the player's gui. Defaults to
+       false.</li>
+ </ul>
+ <br/>
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">enable</span>
+            <span class="types"><span class="type">boolean</span></span>
+         If true sets cinematics mode, if false disables. Defaults to disable.
+         (<em>default</em> false)
+        </li>
+        <li><span class="parameter">options</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         Table of options. See above for
+       information about what options can be passed.
+         (<em>optional</em>)
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <li><pre class="example"><span class="comment">-- Enables cinematics without hiding the GUI, showing
+</span><span class="comment">-- "Let the show begin!" if autonav is aborted.
+</span>player.cinematics(<span class="keyword">true</span>, {gui=<span class="keyword">true</span>, abort=_(<span class="string">"Let the show begin!"</span>)})</pre></li>
+        <li><pre class="example"><span class="comment">-- Disables cinematics.
+</span>player.cinematics(<span class="keyword">false</span>)</pre></li>
     </ul>
 
 </dd>
@@ -1033,22 +1052,37 @@
     <strong>ships ()</strong>
     </dt>
     <dd>
-    Gets the names of the player's ships.
+    Gets information about the player's ships.
+<p> The returned table contains one ship table for each of the player's
+ ships, and each ship table contains the following values:<br/>
+ <ul>
+    <li>"name" (string): The name of the ship (technically, the name
+       of the pilot) given by the player.</li>
+    <li>"ship" (Ship): The actual ship type of the player ship (e.g.
+       the value returned by ship.get("Llama") if the ship is a
+       Llama).</li>
+ </ul>
+ <br/>
+
 
 
 
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><span class="type">{String,...}</span></span>
-        Table of ship names.
+           <span class="types"><span class="type">{ShipTable,...}</span></span>
+        ships Table of ship tables. See above
+       for an explanation of the ship table format.
     </ol>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">names = player.ships() <span class="comment">-- The player's ship names.</span></pre>
+        <pre class="example"><span class="keyword">for</span> i, v <span class="keyword">in</span> <span class="global">ipairs</span>(player.ships()) <span class="keyword">do</span>
+   <span class="global">print</span>(v.name) <span class="comment">-- Prints player-defined pilot name
+</span>   <span class="global">print</span>(v.ship:name()) <span class="comment">-- Prints name of the ship (e.g. "Llama")
+</span><span class="keyword">end</span></pre>
     </ul>
 
 </dd>
@@ -1450,7 +1484,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2021-07-28 11:50:20 </i>
+<i style="float:right;">Last updated 2021-07-31 13:41:13 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 
