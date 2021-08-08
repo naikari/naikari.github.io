@@ -46,7 +46,7 @@
 <h2>Modules</h2>
 <ul class="$(kind=='Topics' and '' or 'nowrap'">
   <li><a href="../modules/ai.html">ai</a></li>
-  <li><a href="../modules/fleet.html">fleet</a></li>
+  <li><strong>fleet</strong></li>
   <li><a href="../modules/lmusic.html">lmusic</a></li>
   <li><a href="../modules/love_shaders.html">love_shaders</a></li>
   <li><a href="../modules/audio.html">audio</a></li>
@@ -55,7 +55,7 @@
   <li><a href="../modules/canvas.html">canvas</a></li>
   <li><a href="../modules/colour.html">colour</a></li>
   <li><a href="../modules/commodity.html">commodity</a></li>
-  <li><strong>data</strong></li>
+  <li><a href="../modules/data.html">data</a></li>
   <li><a href="../modules/debug.html">debug</a></li>
   <li><a href="../modules/diff.html">diff</a></li>
   <li><a href="../modules/evt.html">evt</a></li>
@@ -97,52 +97,16 @@
 
 <div id="content">
 
-<h1>Module <code>data</code></h1>
-<p>Lua bindings to interact with datas.</p>
+<h1>Module <code>fleet</code></h1>
+<p>Functions for adding fleets of pilots.</p>
 <p></p>
 
 
 <h2><a href="#Functions">Functions</a></h2>
 <table class="function_list">
 	<tr>
-	<td class="name" nowrap><a href="#__gc">__gc (data)</a></td>
-	<td class="summary">Frees a data.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#__eq">__eq (d1, d2)</a></td>
-	<td class="summary">Compares two datas to see if they are the same.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#new">new (size, type)</a></td>
-	<td class="summary">Opens a new data.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#get">get ()</a></td>
-	<td class="summary">Gets the value of an element.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#get">get ()</a></td>
-	<td class="summary">Sets the value of an element.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#getSize">getSize ()</a></td>
-	<td class="summary"></td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#getString">getString ()</a></td>
-	<td class="summary"></td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#paste">paste ()</a></td>
-	<td class="summary"></td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#addWeighted">addWeighted ()</a></td>
-	<td class="summary"></td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#convolve2d">convolve2d ()</a></td>
-	<td class="summary"></td>
+	<td class="name" nowrap><a href="#add">add (count, ship, faction, location, pilotname, parameters)</a></td>
+	<td class="summary">Wrapper for pilot.add() that can operate on tables of ships.</td>
 	</tr>
 </table>
 
@@ -154,184 +118,54 @@
 
     <dl class="function">
     <dt>
-    <a name = "__gc"></a>
-    <strong>__gc (data)</strong>
+    <a name = "add"></a>
+    <strong>add (count, ship, faction, location, pilotname, parameters)</strong>
     </dt>
     <dd>
-    Frees a data.
+    Wrapper for pilot.add() that can operate on tables of ships.
+<p>All arguments passed except for the parameters argument can be either
+the argument to pass to pilot.add() itself, or tables of arguments to
+pass to each ship. If a table is passed as an argument, the size of the
+table must be exactly the same as the size of the ship argument table.
+<p> TODO: With a little work we can support a table of parameters tables,
+ but no one even wants that. (Yet?)
 
 
     <h3>Parameters:</h3>
     <ul>
-        <li><span class="parameter">data</span>
-            <span class="types"><span class="type">Data</span></span>
-         Data to free.
+        <li><span class="parameter">count</span>
+         Number of times to repeat the pattern.
         </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "__eq"></a>
-    <strong>__eq (d1, d2)</strong>
-    </dt>
-    <dd>
-    Compares two datas to see if they are the same.
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">d1</span>
-            <span class="types"><span class="type">Data</span></span>
-         Data 1 to compare.
+        <li><span class="parameter">ship</span>
+         Ship to add.
         </li>
-        <li><span class="parameter">d2</span>
-            <span class="types"><span class="type">Data</span></span>
-         Data 2 to compare.
+        <li><span class="parameter">faction</span>
+         Faction to give the pilot.
+        </li>
+        <li><span class="parameter">location</span>
+         Location to jump in from, take off from, or appear at.
+        </li>
+        <li><span class="parameter">pilotname</span>
+         Name to give the pilot.
+        </li>
+        <li><span class="parameter">parameters</span>
+         Table of extra parameters to pass pilot.add().
         </li>
     </ul>
 
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><span class="type">boolean</span></span>
-        true if both datas are the same.
+         Ordered table of created pilots.
     </ol>
 
 
 
-
-</dd>
-    <dt>
-    <a name = "new"></a>
-    <strong>new (size, type)</strong>
-    </dt>
-    <dd>
-    Opens a new data.
-
-
-    <h3>Parameters:</h3>
+    <h3>Usage:</h3>
     <ul>
-        <li><span class="parameter">size</span>
-            <span class="types"><span class="type">number</span></span>
-         Size to allocate for data.
-        </li>
-        <li><span class="parameter">type</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-         Type of the data to create ("number")
-        </li>
+        <li><pre class="example">pilots = fleet.add(<span class="number">2</span>, {<span class="string">"Rhino"</span>, <span class="string">"Koala"</span>}, <span class="string">"Trader"</span>)</pre></li>
+        <li><pre class="example">pilots = fleet.add(<span class="number">1</span>, {<span class="string">"Mule"</span>, <span class="string">"Llama"</span>}, {<span class="string">"Trader"</span>, <span class="string">"Civilian"</span>})</pre></li>
     </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-           <span class="types"><span class="type">Data</span></span>
-        New data object.
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "get"></a>
-    <strong>get ()</strong>
-    </dt>
-    <dd>
-    Gets the value of an element.
-
-
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "get"></a>
-    <strong>get ()</strong>
-    </dt>
-    <dd>
-    Sets the value of an element.
-
-
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "getSize"></a>
-    <strong>getSize ()</strong>
-    </dt>
-    <dd>
-
-
-
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "getString"></a>
-    <strong>getString ()</strong>
-    </dt>
-    <dd>
-
-
-
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "paste"></a>
-    <strong>paste ()</strong>
-    </dt>
-    <dd>
-
-
-
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "addWeighted"></a>
-    <strong>addWeighted ()</strong>
-    </dt>
-    <dd>
-
-
-
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "convolve2d"></a>
-    <strong>convolve2d ()</strong>
-    </dt>
-    <dd>
-
-
-
-
-
-
-
 
 </dd>
 </dl>
