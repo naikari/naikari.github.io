@@ -280,15 +280,15 @@
 	<td class="summary">Sets the pilot's invincibility status towards the player.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#setHide">setHide (p, state)</a></td>
+	<td class="name" nowrap><a href="#setHide">setHide (p[, state=true])</a></td>
 	<td class="summary">Sets the pilot's hide status.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#setInvisible">setInvisible (p, state)</a></td>
+	<td class="name" nowrap><a href="#setInvisible">setInvisible (p[, state=true])</a></td>
 	<td class="summary">Sets the pilot's invisibility status.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#setInvisible">setInvisible (p, state)</a></td>
+	<td class="name" nowrap><a href="#setInvisible">setInvisible (p[, state=true])</a></td>
 	<td class="summary">Sets the pilot's norender status.</td>
 	</tr>
 	<tr>
@@ -328,11 +328,11 @@
 	<td class="summary">Enables or disables a pilot's hyperspace engine.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#setNoLand">setNoLand (p[, state])</a></td>
+	<td class="name" nowrap><a href="#setNoLand">setNoLand (p[, state=true])</a></td>
 	<td class="summary">Enables or disables landing for a pilot.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#setNoClear">setNoClear (p[, state])</a></td>
+	<td class="name" nowrap><a href="#setNoClear">setNoClear (p[, state=true])</a></td>
 	<td class="summary">Enables or disables making the the pilot exempt from pilot.clear().</td>
 	</tr>
 	<tr>
@@ -1389,7 +1389,7 @@
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+           <span class="types"><span class="type">{Outfit,...}</span></span>
         The outfits of the pilot in an ordered list.
     </ol>
 
@@ -2031,7 +2031,7 @@
 </dd>
     <dt>
     <a name = "setHide"></a>
-    <strong>setHide (p, state)</strong>
+    <strong>setHide (p[, state=true])</strong>
     </dt>
     <dd>
     Sets the pilot's hide status.
@@ -2048,7 +2048,9 @@
         </li>
         <li><span class="parameter">state</span>
             <span class="types"><span class="type">boolean</span></span>
-         State to set hide.
+         Whether or not the pilot should
+       be hidden.
+         (<em>default</em> true)
         </li>
     </ul>
 
@@ -2065,7 +2067,7 @@
 </dd>
     <dt>
     <a name = "setInvisible"></a>
-    <strong>setInvisible (p, state)</strong>
+    <strong>setInvisible (p[, state=true])</strong>
     </dt>
     <dd>
     Sets the pilot's invisibility status.
@@ -2082,7 +2084,9 @@
         </li>
         <li><span class="parameter">state</span>
             <span class="types"><span class="type">boolean</span></span>
-         State to set invisibility.
+         Whether or not the pilot should
+       be invisible.
+         (<em>default</em> true)
         </li>
     </ul>
 
@@ -2093,7 +2097,7 @@
 </dd>
     <dt>
     <a name = "setInvisible"></a>
-    <strong>setInvisible (p, state)</strong>
+    <strong>setInvisible (p[, state=true])</strong>
     </dt>
     <dd>
     Sets the pilot's norender status.
@@ -2110,7 +2114,10 @@
         </li>
         <li><span class="parameter">state</span>
             <span class="types"><span class="type">boolean</span></span>
-         State to set norender.
+         true if the pilot should be
+       given norender status, false if the pilot should be rendered
+       normally.
+         (<em>default</em> true)
         </li>
     </ul>
 
@@ -2386,7 +2393,8 @@
         </li>
         <li><span class="parameter">state</span>
             <span class="types"><span class="type">boolean</span></span>
-         true or false
+         true to disallow jumping, false
+       to allow jumping.
          (<em>default</em> true)
         </li>
     </ul>
@@ -2402,7 +2410,7 @@
 </dd>
     <dt>
     <a name = "setNoLand"></a>
-    <strong>setNoLand (p[, state])</strong>
+    <strong>setNoLand (p[, state=true])</strong>
     </dt>
     <dd>
     Enables or disables landing for a pilot.
@@ -2416,8 +2424,9 @@
         </li>
         <li><span class="parameter">state</span>
             <span class="types"><span class="type">boolean</span></span>
-         true or false
-         (<em>optional</em>)
+         true to disallow landing, false
+       to allow landing.
+         (<em>default</em> true)
         </li>
     </ul>
 
@@ -2432,7 +2441,7 @@
 </dd>
     <dt>
     <a name = "setNoClear"></a>
-    <strong>setNoClear (p[, state])</strong>
+    <strong>setNoClear (p[, state=true])</strong>
     </dt>
     <dd>
     Enables or disables making the the pilot exempt from pilot.clear().
@@ -2446,8 +2455,10 @@
         </li>
         <li><span class="parameter">state</span>
             <span class="types"><span class="type">boolean</span></span>
-         true or false
-         (<em>optional</em>)
+         true to exempt the pilot from
+       pilot.clear(), false to make the pilot affected by
+       pilot.clear() normally.
+         (<em>default</em> true)
         </li>
     </ul>
 
@@ -4217,7 +4228,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2021-10-22 22:58:38 </i>
+<i style="float:right;">Last updated 2021-10-23 21:01:44 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 
