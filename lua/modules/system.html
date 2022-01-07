@@ -143,11 +143,11 @@
 	<td class="summary">Gets the system's nebula parameters.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#jumpDist">jumpDist (s[, system[, hidden=false[, known=false]]])</a></td>
+	<td class="name" nowrap><a href="#jumpDist">jumpDist (s[, dest[, hidden=false[, known=false]]])</a></td>
 	<td class="summary">Gets jump distance from current system, or to another.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#jumpPath">jumpPath (s, goal[, hidden=false])</a></td>
+	<td class="name" nowrap><a href="#jumpPath">jumpPath (s[, dest[, hidden=false[, known=false]]])</a></td>
 	<td class="summary">Gets jump path from current system, or to another.</td>
 	</tr>
 	<tr>
@@ -481,15 +481,10 @@
 </dd>
     <dt>
     <a name = "jumpDist"></a>
-    <strong>jumpDist (s[, system[, hidden=false[, known=false]]])</strong>
+    <strong>jumpDist (s[, dest[, hidden=false[, known=false]]])</strong>
     </dt>
     <dd>
     Gets jump distance from current system, or to another.
-<p> Does different things depending on the parameter type:
-    - nil : Gets distance to current system.
-    - string : Gets distance to system matching name.
-    - system : Gets distance to system
-
 
 
     <h3>Parameters:</h3>
@@ -498,10 +493,10 @@
             <span class="types"><span class="type">System</span></span>
          Starting system.
         </li>
-        <li><span class="parameter">system</span>
+        <li><span class="parameter">dest</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">System</span></span>
-         System to get distance to.
-       If nil or unspecified, gets distance to the current system.
+         System to get distance to.  If
+       nil or unspecified, gets distance to the current system.
          (<em>optional</em>)
         </li>
         <li><span class="parameter">hidden</span>
@@ -538,17 +533,10 @@
 </dd>
     <dt>
     <a name = "jumpPath"></a>
-    <strong>jumpPath (s, goal[, hidden=false])</strong>
+    <strong>jumpPath (s[, dest[, hidden=false[, known=false]]])</strong>
     </dt>
     <dd>
     Gets jump path from current system, or to another.
-<p> Does different things depending on the parameter type:
- <ul>
-    <li>nil : Gets path to current system.</li>
-    <li>string : Gets path to system with the given raw (untranslated) name.</li>
-    <li>system : Gets path to system</li>
- </ul>
-
 
 
     <h3>Parameters:</h3>
@@ -557,13 +545,22 @@
             <span class="types"><span class="type">System</span></span>
          Starting system.
         </li>
-        <li><span class="parameter">goal</span>
-            <span class="types"><span class="type">System</span></span>
-         Goal system param See description.
+        <li><span class="parameter">dest</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">System</span></span>
+         System to get path to.  If nil
+       or unspecified, gets path to the current system.
+         (<em>optional</em>)
         </li>
         <li><span class="parameter">hidden</span>
             <span class="types"><span class="type">boolean</span></span>
-         Whether or not to consider hidden jumps.
+         Whether or not to consider
+       hidden jumps.
+         (<em>default</em> false)
+        </li>
+        <li><span class="parameter">known</span>
+            <span class="types"><span class="type">boolean</span></span>
+         Whether or not to consider
+       only jumps known by the player.
          (<em>default</em> false)
         </li>
     </ul>
@@ -571,17 +568,17 @@
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><span class="type">{Jump,...}</span></span>
-        Table of jumps.
+           <span class="types"><span class="type">{Jump,...}</span> or <span class="type">nil</span></span>
+        Table of jumps, or nil if there is no
+       route to the system with the given parameters.
     </ol>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <li><pre class="example">jumps = sys:jumpPath( system.cur() ) <span class="comment">-- Path from sys to current system.</span></pre></li>
-        <li><pre class="example">jumps = sys:jumpPath( <span class="string">"Draygar"</span> ) <span class="comment">-- Path from sys to Draygar.</span></pre></li>
-        <li><pre class="example">jumps = system.jumpPath( <span class="string">"Draygar"</span>, another_sys ) <span class="comment">-- Path from Draygar to another_sys.</span></pre></li>
+        <li><pre class="example">jumps = sys:jumpPath() <span class="comment">-- Path from sys to current system.</span></pre></li>
+        <li><pre class="example">jumps = sys:jumpPath(<span class="string">"Draygar"</span>) <span class="comment">-- Path from sys to Draygar.</span></pre></li>
     </ul>
 
 </dd>
@@ -1200,7 +1197,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2022-01-07 04:34:17 </i>
+<i style="float:right;">Last updated 2022-01-07 18:20:25 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 
