@@ -47,7 +47,7 @@
 <ul class="$(kind=='Topics' and '' or 'nowrap'">
   <li><a href="../modules/ai.html">ai</a></li>
   <li><a href="../modules/fleet.html">fleet</a></li>
-  <li><a href="../modules/fmt.html">fmt</a></li>
+  <li><strong>fmt</strong></li>
   <li><a href="../modules/lmusic.html">lmusic</a></li>
   <li><a href="../modules/love_shaders.html">love_shaders</a></li>
   <li><a href="../modules/audio.html">audio</a></li>
@@ -69,7 +69,7 @@
   <li><a href="../modules/jump.html">jump</a></li>
   <li><a href="../modules/linopt.html">linopt</a></li>
   <li><a href="../modules/misn.html">misn</a></li>
-  <li><strong>music</strong></li>
+  <li><a href="../modules/music.html">music</a></li>
   <li><a href="../modules/naev.html">naev</a></li>
   <li><a href="../modules/news.html">news</a></li>
   <li><a href="../modules/outfit.html">outfit</a></li>
@@ -97,46 +97,33 @@
 
 <div id="content">
 
-<h1>Module <code>music</code></h1>
-<p>Music Lua module.</p>
-<p>
-<p> Typical usage would be something like:
- <pre>
- music.load( "intro" ) -- Load the song
- music.play() -- Play it
- </pre>
-</p>
+<h1>Module <code>fmt</code></h1>
+<p>Functions for formatting strings.</p>
+<p></p>
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">local fmt = require &quot;fmt&quot;
+</pre>
+    </ul>
 
 
 <h2><a href="#Functions">Functions</a></h2>
 <table class="function_list">
 	<tr>
-	<td class="name" nowrap><a href="#delay">delay (situation, delay)</a></td>
-	<td class="summary">Delays a rechoose.</td>
+	<td class="name" nowrap><a href="#number">number (number)</a></td>
+	<td class="summary">Converts an integer into a human readable string.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#load">load (name)</a></td>
-	<td class="summary">Loads a song.</td>
+	<td class="name" nowrap><a href="#credits">credits (credits)</a></td>
+	<td class="summary">Converts a number of credits to a string (e.g.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#play">play ()</a></td>
-	<td class="summary">Plays the loaded song.</td>
+	<td class="name" nowrap><a href="#tonnes">tonnes (tonnes)</a></td>
+	<td class="summary">Converts a number of tonnes to a string.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#stop">stop ([disable=false])</a></td>
-	<td class="summary">Stops playing the current song.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#isPlaying">isPlaying ()</a></td>
-	<td class="summary">Checks to see if something is playing.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#current">current ()</a></td>
-	<td class="summary">Gets the name of the current playing song.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#setRepeat">setRepeat (repeat)</a></td>
-	<td class="summary">Makes the music repeat.</td>
+	<td class="name" nowrap><a href="#f">f (str, tab)</a></td>
+	<td class="summary">String interpolation function.</td>
 	</tr>
 </table>
 
@@ -148,162 +135,143 @@
 
     <dl class="function">
     <dt>
-    <a name = "delay"></a>
-    <strong>delay (situation, delay)</strong>
+    <a name = "number"></a>
+    <strong>number (number)</strong>
     </dt>
     <dd>
-    Delays a rechoose.
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">situation</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-         Situation to choose.
-        </li>
-        <li><span class="parameter">delay</span>
-            <span class="types"><span class="type">number</span></span>
-         Delay in seconds.
-        </li>
-    </ul>
-
-
-
-
-    <h3>Usage:</h3>
-    <ul>
-        <pre class="example">music.delay( <span class="string">"ambient"</span>, <span class="number">5.0</span> ) <span class="comment">-- Rechooses ambient in 5 seconds</span></pre>
-    </ul>
-
-</dd>
-    <dt>
-    <a name = "load"></a>
-    <strong>load (name)</strong>
-    </dt>
-    <dd>
-    Loads a song.
-<p> Restores the music system if it was temporarily disabled.
+    Converts an integer into a human readable string.
+<p>The conversion rounds to the nearest integer and inserts commas every
+three places.
 
 
 
     <h3>Parameters:</h3>
     <ul>
-        <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-         Name of the song to load.
+        <li><span class="parameter">number</span>
+            <span class="types"><a class="type" href="../modules/fmt.html#number">number</a></span>
+         Number to convert.
         </li>
     </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "play"></a>
-    <strong>play ()</strong>
-    </dt>
-    <dd>
-    Plays the loaded song.
-<p> Restores the music system if it was temporarily disabled.
-
-
-
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "stop"></a>
-    <strong>stop ([disable=false])</strong>
-    </dt>
-    <dd>
-    Stops playing the current song.
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">disable</span>
-            <span class="types"><span class="type">boolean</span></span>
-         Whether or not to disable the music system temporarily after stopping.
-         (<em>default</em> false)
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "isPlaying"></a>
-    <strong>isPlaying ()</strong>
-    </dt>
-    <dd>
-    Checks to see if something is playing.
-
-
 
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><span class="type">boolean</span></span>
-        true if something is playing.
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "current"></a>
-    <strong>current ()</strong>
-    </dt>
-    <dd>
-    Gets the name of the current playing song.
-
-
-
-    <h3>Returns:</h3>
-    <ol>
-        <li>
            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        The name of the current playing song or "none" if no song is playing.</li>
-        <li>
-           <span class="types"><span class="type">number</span></span>
-        The current offset inside the song (0. if music is none).</li>
+        The converted string.
     </ol>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">songname, songplayed = music.current()</pre>
+        <pre class="example">s = fmt.number(<span class="number">60000000</span>) <span class="comment">-- Converts to "60,000,000"</span></pre>
     </ul>
 
 </dd>
     <dt>
-    <a name = "setRepeat"></a>
-    <strong>setRepeat (repeat)</strong>
+    <a name = "credits"></a>
+    <strong>credits (credits)</strong>
     </dt>
     <dd>
-    Makes the music repeat.  This gets turned of when a new music is chosen, e.g., take-off or landing.
+    Converts a number of credits to a string (e.g.  "10.00 k¢").
+<p>The conversion method is the same as in C credits2str function, but
+locked to using 2 decimal places.
 
 
 
     <h3>Parameters:</h3>
     <ul>
-        <li><span class="parameter">repeat</span>
-            <span class="types"><span class="type">boolean</span></span>
-         Whether or not repeat should be set.
+        <li><span class="parameter">credits</span>
+            <span class="types"><a class="type" href="../modules/fmt.html#number">number</a></span>
+         Number of credits.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        The converted string.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">misn.setReward(fmt.credits(<span class="number">100000</span>))</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "tonnes"></a>
+    <strong>tonnes (tonnes)</strong>
+    </dt>
+    <dd>
+    Converts a number of tonnes to a string.
+<p>DO NOT USE THIS WITHIN SENTENCES. Relying on it for that use-case can
+lead to sentences which cannot be properly translated. Use this
+function ONLY for cases where a number of tonnes is shown alone.
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tonnes</span>
+            <span class="types"><a class="type" href="../modules/fmt.html#number">number</a></span>
+         Number of tonnes.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        The converted string.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "f"></a>
+    <strong>f (str, tab)</strong>
+    </dt>
+    <dd>
+    String interpolation function.
+<p>Inspired by
+<a href="https://github.com/hishamhm/f-strings">f-strings</a>, but more
+similar to Python's str.format() and simplified. Prefer this over
+string.format because it allows translations to change the word order.
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">str</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Format string which may include placeholders of
+      the form "{var}" or "{var:6.3f}" (where the expression after the
+      colon is any directive string.format understands). A var which is
+      a number is treated as a number; all other var definition is
+      treated as a string. This value is used to index the argument
+      table.
+        </li>
+        <li><span class="parameter">tab</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         Argument table.
         </li>
     </ul>
 
 
 
 
+    <h3>Usage:</h3>
+    <ul>
+        <li><pre class="example">fmt.f(_(<span class="string">"Land on {pntname} ({sysname} system)"</span>), {pntname=returnpnt:name(), sysname=returnsys:name()})</pre></li>
+        <li><pre class="example">fmt.f(_(<span class="string">"As easy as {1}, {2}, {3}"</span>), {<span class="string">"one"</span>, <span class="string">"two"</span>, <span class="string">"three"</span>})</pre></li>
+        <li><pre class="example">fmt.f(_(<span class="string">"A few digits of pi: {1:.2f}"</span>), {<span class="global">math</span>.pi})</pre></li>
+    </ul>
 
 </dd>
 </dl>
