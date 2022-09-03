@@ -211,11 +211,11 @@
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#safe">safe (funcname, arg)</a></td>
-	<td class="summary">Hook run once at the end of the next frame regardless of anything that can happen.</td>
+	<td class="summary">Hook run once at the end of the next frame.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#update">update (funcname, arg)</a></td>
-	<td class="summary">Hook run at the end of each frame when the update routine is run (game is not paused, etc.).</td>
+	<td class="summary">Hook run at the end of each frame when the update routine is run.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#renderbg">renderbg (funcname, arg)</a></td>
@@ -227,11 +227,11 @@
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#custom">custom (hookname, funcname, arg)</a></td>
-	<td class="summary">Hook run once at the end of the next frame regardless when manually triggered.</td>
+	<td class="summary">Custom hook that must be manually triggered.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#trigger">trigger (hookname)</a></td>
-	<td class="summary">Triggers manually a hook stack.</td>
+	<td class="name" nowrap><a href="#trigger">trigger (hookname, params)</a></td>
+	<td class="summary">Manually triggers a hook.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#pilot">pilot (pilot, type, funcname, arg)</a></td>
@@ -1016,8 +1016,11 @@
     <strong>safe (funcname, arg)</strong>
     </dt>
     <dd>
-    Hook run once at the end of the next frame regardless of anything that can happen.
-<p> This hook is a good way to do possibly breaking stuff like for example player.teleport().
+    Hook run once at the end of the next frame.
+<p> This hook runs once (and only once) at the end of the next frame,
+ regardless of anything that can happen, and removes itself. This is
+ a good way to do possibly breaking stuff like for example
+ player.teleport().
 
 
 
@@ -1025,7 +1028,8 @@
     <ul>
         <li><span class="parameter">funcname</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-         Name of function to run when hook is triggered.
+         Name of function to run when hook is
+       triggered.
         </li>
         <li><span class="parameter">arg</span>
          Argument to pass to hook.
@@ -1048,10 +1052,14 @@
     <strong>update (funcname, arg)</strong>
     </dt>
     <dd>
-    Hook run at the end of each frame when the update routine is run (game is not paused, etc.).
-<p> It is closely related to hook.safe(), but you have to manually remove it or it continues forever.
-<p> The current delta-tick (time passed in game) and real delta-tick (independent of game status) are passed as parameters:<br/>
- function f( dt, real_dt, args )
+    Hook run at the end of each frame when the update routine is run.
+<p> This hook is similar to hook.safe(), but you have to manually remove
+ it or it continues forever. Also, it is not run while the game is
+ paused or a modal dialog is open, whereas hook.safe() will run even
+ in those cases.
+<p> The parameters passed to the function are the current delta-tick
+ (time passed in game) and real delta-tick (independent of game
+ status).
 
 
 
@@ -1059,7 +1067,8 @@
     <ul>
         <li><span class="parameter">funcname</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-         Name of function to run when hook is triggered.
+         Name of function to run when hook is
+       triggered.
         </li>
         <li><span class="parameter">arg</span>
          Argument to pass to hook.
@@ -1144,18 +1153,24 @@
     <strong>custom (hookname, funcname, arg)</strong>
     </dt>
     <dd>
-    Hook run once at the end of the next frame regardless when manually triggered.
+    Custom hook that must be manually triggered.
+<p> Custom hooks can be used to cause missions and events to affect each
+ other. Use hook.trigger() to trigger the hook at the appropriate
+ time.
+
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">hookname</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-         Name to give the hook. This should not overlap with standard names.
+         Name to give the hook. This should not
+       overlap with standard names.
         </li>
         <li><span class="parameter">funcname</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-         Name of function to run when hook is triggered.
+         Name of function to run when hook is
+       triggered.
         </li>
         <li><span class="parameter">arg</span>
          Argument to pass to hook.
@@ -1175,12 +1190,15 @@
 </dd>
     <dt>
     <a name = "trigger"></a>
-    <strong>trigger (hookname)</strong>
+    <strong>trigger (hookname, params)</strong>
     </dt>
     <dd>
-    Triggers manually a hook stack.  This is run deferred (next frame). Meant mainly to be used with hook.custom, but can work with other hooks too (if you know what you are doing).
-<p> You can pass multiple parameters that get directly passed to the hook. However, this is limited by HOOK_MAX_PARAM.
-
+    Manually triggers a hook.
+<p> This is run deferred (next frame) globally (i.e. it affects all
+ missions and events). Meant mainly to be used with hook.custom(), but
+ can work with other hooks too (if you know what you are doing).
+<p>       can pass multiple arguments, but this is limited by
+       HOOK_MAX_PARAM (which is defined in hook.h).
 
 
     <h3>Parameters:</h3>
@@ -1188,6 +1206,9 @@
         <li><span class="parameter">hookname</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          Name of the hook to be run.
+        </li>
+        <li><span class="parameter">params</span>
+         Arguments to pass to the hook's parameters. You
         </li>
     </ul>
 
@@ -1240,7 +1261,7 @@
        lockon.</li>
  </ul>
 <p> If you pass nil as pilot, it will set it as a global hook that
- will jump for all pilots.
+ will trigger for all pilots.
 <p> <strong>Do not do unsafe things in pilot hooks. This means stuff like
  player.teleport(). If you have doubts, use a "safe" hook.</strong>
 
@@ -1283,7 +1304,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2022-09-03 15:39:37 </i>
+<i style="float:right;">Last updated 2022-09-03 19:02:04 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 
