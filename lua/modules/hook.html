@@ -100,16 +100,24 @@
 <h1>Module <code>hook</code></h1>
 <p>Lua bindings to manipulate hooks.</p>
 <p>
-<p> Hooks allow you to trigger functions to certain actions like when the player
-  jumps or a pilot dies.
-<p> They can have arguments passed to them which will then get passed to the
-  called hook function.
+<p> Hooks allow you to trigger functions to certain actions like when the
+ player jumps or a pilot dies.
+<p> The function an action is hooked to is passed a list of hook
+ parameter arguments, plus an optional argument. The hook parameters
+ (and how many hook parameters there are) vary by the type of action
+ being hooked.
 <p> Example usage would be:
  <pre>
- function penter( arg )
-    -- Function to run when player enters a system
+ function player_board(target, arg)
+    -- Causes the player to get paid any time they board a ship from
+    -- the faction specified by the optional argument.
+    if target:faction() == arg then
+       player.pay(10000)
+    end
  end
-<p> hookid = hook.enter( "penter", 5 )
+<p> -- Hooks the function, specifying the Pirate faction as the optional
+ -- argument.
+ hookid = hook.board("player_board", faction.get("Pirate"))
  </pre>
 </p>
 
@@ -195,7 +203,7 @@
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#input">input (funcname[, arg])</a></td>
-	<td class="summary">Hooks the function to the player pressing any input.</td>
+	<td class="summary">Hooks the function to the player pressing or releasing any input.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#mouse">mouse (funcname[, arg])</a></td>
@@ -281,15 +289,18 @@
     </dt>
     <dd>
     Hooks the function to the player landing.
-<p> Can also be used to hook the various subparts of the landing menu. Possible targets
-  for where are:<br />
-   - "land" - when landed (default with no parameter )<br />
-   - "outfits" - when visited outfitter<br />
-   - "shipyard" - when visited shipyard<br />
-   - "bar" - when visited bar<br />
-   - "mission" - when visited mission computer<br />
-   - "commodity" - when visited commodity exchange<br />
-   - "equipment" - when visiting equipment place<br />
+<p> Can also be used to hook the various subparts of the landing menu.
+ Possible targets for where are:
+<p> <ul>
+    <li>"land": when landing (default with no parameter)</li>
+    <li>"outfits": when visiting outfitter</li>
+    <li>"shipyard": when visiting shipyard</li>
+    <li>"bar": when visiting bar</li>
+    <li>"mission": when visiting mission computer</li>
+    <li>"commodity": when visiting commodity exchange</li>
+    <li>"equipment": when visiting equipment screen</li>
+ </ul>
+<p> The hook receives only the optional argument.
 
 
 
@@ -332,6 +343,8 @@
     </dt>
     <dd>
     Hooks the function to the player loading the game (starts landed).
+<p> The hook receives only the optional argument.
+
 
 
     <h3>Parameters:</h3>
@@ -367,6 +380,8 @@
     </dt>
     <dd>
     Hooks the function to the player taking off.
+<p> The hook receives only the optional argument.
+
 
 
     <h3>Parameters:</h3>
@@ -398,6 +413,8 @@
     </dt>
     <dd>
     Hooks the function to the player jumping (before changing systems).
+<p> The hook receives only the optional argument.
+
 
 
     <h3>Parameters:</h3>
@@ -429,6 +446,8 @@
     </dt>
     <dd>
     Hooks the function to the player jumping (after changing systems).
+<p> The hook receives only the optional argument.
+
 
 
     <h3>Parameters:</h3>
@@ -461,6 +480,8 @@
     <dd>
     Hooks the function to the player entering a system (triggers when taking
   off too).
+<p> The hook receives only the optional argument.
+
 
 
     <h3>Parameters:</h3>
@@ -492,7 +513,7 @@
     </dt>
     <dd>
     Hooks the function to the player hailing any ship (not a planet).
-<p> The hook receives a single parameter which is the ship being hailed.
+<p> Hook parameter is the ship being hailed.
 
 
 
@@ -525,8 +546,8 @@
     </dt>
     <dd>
     Hooks the function to any pilot dying.
-<p> The hook receives two parameters: the pilot that died, and pilot that
- killed them (or nil if not killed by a pilot).
+<p> Hook parameters are the pilot that died, and pilot that killed them
+ (or nil if not killed by a pilot).
 
 
 
@@ -560,7 +581,7 @@
     </dt>
     <dd>
     Hooks the function to the player boarding any ship.
-<p> The hook receives a single parameter which is the ship being boarded.
+<p> Hook parameter is the ship being boarded.
 
 
 
@@ -671,7 +692,8 @@
     </dt>
     <dd>
     Hooks the function to the player buying any sort of commodity.
-<p> The hook receives the name of the commodity and the quantity being bought.
+<p> Hook parameter is the raw (untranslated) name of the commodity and
+ the quantity being bought.
 
 
 
@@ -704,7 +726,8 @@
     </dt>
     <dd>
     Hooks the function to the player selling any sort of commodity.
-<p> The hook receives the name of the commodity and the quantity being bought.
+<p> Hook parameter is the raw (untranslated) name of the commodity and
+ the quantity being bought.
 
 
 
@@ -737,7 +760,8 @@
     </dt>
     <dd>
     Hooks the function to the player gatehring any sort of commodity in space.
-<p> The hook receives the name of the commodity and the quantity being gathered.
+<p> Hook parameter is the raw (untranslated) name of the commodity and
+ the quantity being gathered.
 
 
 
@@ -770,7 +794,8 @@
     </dt>
     <dd>
     Hooks the function to the player buying any sort of outfit.
-<p> The hook receives the name of the outfit and the quantity being bought.
+<p> Hook parameter is the raw (untranslated) name of the outfit and the
+ quantity being bought.
 
 
 
@@ -803,7 +828,8 @@
     </dt>
     <dd>
     Hooks the function to the player selling any sort of outfit.
-<p> The hook receives the name of the outfit and the quantity being sold.
+<p> Hook parameter is the raw (untranslated) name of the outfit and the
+ quantity being sold.
 
 
 
@@ -836,7 +862,8 @@
     </dt>
     <dd>
     Hooks the function to the player buying any sort of ship.
-<p> The hook receives the name of the ship type bought.
+<p> Hook parameter is the raw (untranslated) name of the ship type
+ bought.
 
 
 
@@ -869,7 +896,8 @@
     </dt>
     <dd>
     Hooks the function to the player selling any sort of ship.
-<p> The hook receives the name of the ship type sold and the player-given name of the ship.
+<p> Hook parameter is the raw (untranslated) name of the ship type sold
+ and the player-given name of the ship.
 
 
 
@@ -901,11 +929,9 @@
     <strong>input (funcname[, arg])</strong>
     </dt>
     <dd>
-    Hooks the function to the player pressing any input.
-<p> It returns the name of the key being pressed like "accel" and whether or not it's a press.<br/>
- <br/>
- Functions should be in format:<br/>
-   function f( inputname, inputpress, args )
+    Hooks the function to the player pressing or releasing any input.
+<p> Hook parameters are the name of the key (e.g. "accel") and whether or
+ not it's a press.
 
 
 
@@ -938,7 +964,12 @@
     </dt>
     <dd>
     Hooks the function to the player clicking the mouse.
-<p> The parameter passed to the function is the button pressed (1==left,2==middle,3==right).
+<p> Hook parameter is the button pressed:
+<p> <ul>
+    <li>1: left mouse button</li>
+    <li>2: middle mouse button</li>
+    <li>3: right mouse button</li>
+ </ul>
 
 
 
@@ -971,9 +1002,8 @@
     </dt>
     <dd>
     Hooks the function to any faction standing change.
-<p> The parameters passed to the function are faction whose standing is being
- changed, the change amount, and whether or not the change is secondary:<br/>
- function f(faction, change, secondary, args)
+<p> Hook parameters are faction whose standing is being changed, the
+ change amount, and whether or not the change is secondary.
 
 
 
@@ -1043,9 +1073,9 @@
     </dt>
     <dd>
     Hooks the function to when the player receives or loses money through player.pay() (the Lua function only).
-<p> The amount paid (or taken from the player), and the reason specified by
-  player.pay() (nil by default), are passed as parameters:<br/>
- function f( amount, reason, arg )
+<p> Hook parameters are the amount paid (will be negative if it was a
+ loss of money), and the reason specified by player.pay() (nil by
+ default).
 
 
 
@@ -1082,6 +1112,7 @@
  regardless of anything that can happen, and removes itself. This is
  a good way to do possibly breaking stuff like for example
  player.teleport().
+<p> The hook receives only the optional argument.
 
 
 
@@ -1230,7 +1261,8 @@
 <p> Custom hooks can be used to cause missions and events to affect each
  other. Use hook.trigger() to trigger the hook at the appropriate
  time.
-<p> Hook parameters are chosen by the hook.trigger() call.
+<p> Hook parameters (and number of hook parameters) are chosen by the
+ respective hook.trigger() call(s).
 
 
 
@@ -1392,7 +1424,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2023-01-04 17:38:48 </i>
+<i style="float:right;">Last updated 2023-01-04 20:04:43 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 
