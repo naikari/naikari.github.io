@@ -31,17 +31,16 @@
 
 
 <!-- Menu -->
-
 <div id="navigation">
-<br/>
-<h1>Naikari Lua API</h1>
+<nav title="Naikari Lua API">
+<h2>Naikari Lua API</h2>
 
 <ul>
   <li><a href="../index.html">Index</a></li>
 </ul>
 
 
-<h2>Modules</h2>
+<h3>Modules</h3>
 <ul class="$(kind=='Topics' and '' or 'nowrap'">
   <li><a href="../modules/ai.html">ai</a></li>
   <li><a href="../modules/fleet.html">fleet</a></li>
@@ -91,11 +90,13 @@
   <li><a href="../modules/prng.html">prng</a></li>
 </ul>
 
+</nav>
 </div>
 
 <div id="content">
+<main>
 
-<h1>Module <code>gfx</code></h1>
+<h2>Module <code>gfx</code></h2>
 <p>Lua bindings to interact with rendering and the Naev graphical environment.</p>
 <p>
 <p> An example would be:
@@ -106,7 +107,7 @@
 </p>
 
 
-<h2><a href="#Functions">Functions</a></h2>
+<h3><a href="#Functions">Functions</a></h3>
 <table class="function_list">
 	<tr>
 	<td class="name" nowrap><a href="#dim">dim ()</a></td>
@@ -198,7 +199,7 @@
 <br/>
 
 
-    <h2><a name="Functions"></a>Functions</h2>
+    <h3><a name="Functions"></a>Functions</h3>
 
     <dl class="function">
     <dt>
@@ -210,7 +211,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
         <li>
            <span class="types"><span class="type">number</span></span>
@@ -225,7 +226,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">screen_w, screen_h = gfx.dim()</pre>
     </ul>
@@ -241,7 +242,7 @@
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">tex</span>
             <span class="types"><span class="type">Tex</span></span>
@@ -275,7 +276,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <li><pre class="example">gfx.renderTex( tex, <span class="number">0.</span>, <span class="number">0.</span> ) <span class="comment">-- Render tex at origin</span></pre></li>
         <li><pre class="example">gfx.renderTex( tex, <span class="number">0.</span>, <span class="number">0.</span>, col ) <span class="comment">-- Render tex at origin with colour col</span></pre></li>
@@ -296,7 +297,7 @@
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">tex</span>
             <span class="types"><span class="type">Tex</span></span>
@@ -357,7 +358,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">gfx.renderTexRaw( tex, <span class="number">0.</span>, <span class="number">0.</span>, <span class="number">100.</span>, <span class="number">100.</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0.</span>, <span class="number">0.</span>, <span class="number">0.5</span>, <span class="number">0.5</span> ) <span class="comment">-- Renders the bottom quarter of the sprite 1,1 of the image.</span></pre>
     </ul>
@@ -371,7 +372,7 @@
     Renders a texture using a transformation matrix.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">tex</span>
             <span class="types"><span class="type">Tex</span></span>
@@ -405,7 +406,7 @@
     Renders a rectangle.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -437,7 +438,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <li><pre class="example">gfx.renderRect( <span class="number">10.</span>, <span class="number">30</span>,. <span class="number">40.</span>, <span class="number">40.</span>, col ) <span class="comment">-- Renders a 40 side square at position 10,30 of colour col</span></pre></li>
         <li><pre class="example">gfx.renderRect( <span class="number">10.</span>, <span class="number">30</span>,. <span class="number">40.</span>, <span class="number">40.</span>, col, True ) <span class="comment">-- Renders a 40 side empty square at position 10,30 of colour col</span></pre></li>
@@ -452,7 +453,7 @@
     Renders a rectangle given a transformation matrix.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">H</span>
             <span class="types"><span class="type">Transform</span></span>
@@ -483,7 +484,7 @@
     Renders a circle
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -521,7 +522,7 @@
     Renders a circle given a transformation matrix.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">H</span>
             <span class="types"><span class="type">Transform</span></span>
@@ -552,7 +553,7 @@
     Gets the size of the font.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">small</span>
             <span class="types"><span class="type">boolean</span></span>
@@ -560,7 +561,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">The</span></span>
@@ -579,7 +580,7 @@
     Gets the size of the text to print.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">small</span>
             <span class="types"><span class="type">boolean</span></span>
@@ -599,7 +600,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <li><pre class="example">len = gfx.printDim( <span class="keyword">nil</span>, _(<span class="string">"Hello World!"</span>) ) <span class="comment">-- Length of string with normal font</span></pre></li>
         <li><pre class="example">height = gfx.printDim( <span class="keyword">true</span>, _(<span class="string">[["Longer text"]]</span>), <span class="number">20</span> ) <span class="comment">-- Dimensions of text block</span></pre></li>
@@ -614,7 +615,7 @@
     Gets the size of the text to print.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">font</span>
             <span class="types"><span class="type">font</span></span>
@@ -644,7 +645,7 @@
     Gets the wrap for text.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">font</span>
             <span class="types"><span class="type">font</span></span>
@@ -660,7 +661,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
         <li>
            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
@@ -710,7 +711,7 @@
     Prints text on the screen using a font.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">font</span>
             <span class="types"><span class="type">font</span></span>
@@ -747,7 +748,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">gfx.printf( font, _(<span class="string">"Hello World!"</span>), <span class="number">50</span>, <span class="number">50</span>, colour.new(<span class="string">"Red"</span>) ) <span class="comment">-- Displays text in red at 50,50.</span></pre>
     </ul>
@@ -761,7 +762,7 @@
     Prints text on the screen using a font with a transformation matirx.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">H</span>
             <span class="types"><span class="type">Transform</span></span>
@@ -800,7 +801,7 @@
     Prints text on the screen.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">small</span>
             <span class="types"><span class="type">boolean</span></span>
@@ -837,7 +838,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <li><pre class="example">gfx.<span class="global">print</span>( <span class="keyword">nil</span>, _(<span class="string">"Hello World!"</span>), <span class="number">50</span>, <span class="number">50</span>, colour.new(<span class="string">"Red"</span>) ) <span class="comment">-- Displays text in red at 50,50.</span></pre></li>
         <li><pre class="example">gfx.<span class="global">print</span>( <span class="keyword">true</span>, _(<span class="string">"Hello World!"</span>), <span class="number">50</span>, <span class="number">50</span>, col, <span class="number">100</span> ) <span class="comment">-- Displays text to a maximum of 100 pixels wide.</span></pre></li>
@@ -853,7 +854,7 @@
     Prints a block of text on the screen.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">small</span>
             <span class="types"><span class="type">boolean</span></span>
@@ -892,7 +893,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">gfx.printText( <span class="keyword">true</span>, <span class="number">100</span>, <span class="number">50</span>, <span class="number">50</span>, <span class="number">100</span>, <span class="number">100</span>, col ) <span class="comment">-- Displays a 100x100 block of text</span></pre>
     </ul>
@@ -907,7 +908,7 @@
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">mode</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -923,7 +924,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">gfx.setBlendMode( <span class="string">"alpha"</span>, <span class="string">"premultiplied"</span> )</pre>
     </ul>
@@ -939,7 +940,7 @@
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -972,7 +973,7 @@
     Takes the current rendered game screen and returns it as a canvas.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">c</span>
             <span class="types"><span class="type">Canvas</span></span>
@@ -981,7 +982,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">Canvas</span></span>
@@ -995,11 +996,12 @@
 </dl>
 
 
+</main>
 </div> <!-- id="content" -->
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2023-01-29 17:09:45 </i>
+<i style="float:right;">Last updated 2023-01-29 17:40:54 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 

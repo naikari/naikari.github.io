@@ -31,17 +31,16 @@
 
 
 <!-- Menu -->
-
 <div id="navigation">
-<br/>
-<h1>Naikari Lua API</h1>
+<nav title="Naikari Lua API">
+<h2>Naikari Lua API</h2>
 
 <ul>
   <li><a href="../index.html">Index</a></li>
 </ul>
 
 
-<h2>Modules</h2>
+<h3>Modules</h3>
 <ul class="$(kind=='Topics' and '' or 'nowrap'">
   <li><a href="../modules/ai.html">ai</a></li>
   <li><a href="../modules/fleet.html">fleet</a></li>
@@ -91,11 +90,13 @@
   <li><a href="../modules/prng.html">prng</a></li>
 </ul>
 
+</nav>
 </div>
 
 <div id="content">
+<main>
 
-<h1>Module <code>ship</code></h1>
+<h2>Module <code>ship</code></h2>
 <p>Lua bindings to interact with ships.</p>
 <p>
 <p> This will allow you to create and manipulate ships in-game.
@@ -107,7 +108,7 @@
 </p>
 
 
-<h2><a href="#Functions">Functions</a></h2>
+<h3><a href="#Functions">Functions</a></h3>
 <table class="function_list">
 	<tr>
 	<td class="name" nowrap><a href="#__eq">__eq (s1, s2)</a></td>
@@ -179,7 +180,7 @@
 <br/>
 
 
-    <h2><a name="Functions"></a>Functions</h2>
+    <h3><a name="Functions"></a>Functions</h3>
 
     <dl class="function">
     <dt>
@@ -190,7 +191,7 @@
     Checks to see if two ships are the same.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">s1</span>
             <span class="types"><span class="type">Ship</span></span>
@@ -202,7 +203,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -211,7 +212,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example"><span class="keyword">if</span> s1 == s2 <span class="keyword">then</span> <span class="comment">-- Checks to see if ship s1 and s2 are the same</span></pre>
     </ul>
@@ -225,7 +226,7 @@
     Gets a ship.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">s</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -233,7 +234,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">Ship</span></span>
@@ -242,7 +243,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">s = ship.get( <span class="string">"Hyena"</span> ) <span class="comment">-- Gets the hyena</span></pre>
     </ul>
@@ -257,7 +258,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
@@ -280,7 +281,7 @@
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">s</span>
             <span class="types"><span class="type">Ship</span></span>
@@ -288,7 +289,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -297,7 +298,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">shipname = s:name() <span class="comment">-- Equivalent to `_(s:nameRaw())`</span></pre>
     </ul>
@@ -315,7 +316,7 @@
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">s</span>
             <span class="types"><span class="type">Ship</span></span>
@@ -323,7 +324,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -332,7 +333,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">shipname = s:nameRaw()</pre>
     </ul>
@@ -348,7 +349,7 @@
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">s</span>
             <span class="types"><span class="type">Ship</span></span>
@@ -356,7 +357,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -365,7 +366,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example"><span class="global">type</span> = s:baseType()</pre>
     </ul>
@@ -379,7 +380,7 @@
     Gets the raw (untranslated) name of the ship's class.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">s</span>
             <span class="types"><span class="type">Ship</span></span>
@@ -387,7 +388,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -396,7 +397,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">shipclass = s:class()</pre>
     </ul>
@@ -410,7 +411,7 @@
     Gets the amount of the ship's slots.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">s</span>
             <span class="types"><span class="type">Ship</span></span>
@@ -418,7 +419,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
         <li>
            <span class="types"><span class="type">number</span></span>
@@ -433,7 +434,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">slots_weapon, slots_utility, slots_structure = p:slots()</pre>
     </ul>
@@ -448,14 +449,14 @@
                (Strings are English.)
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">s</span>
          Ship to get slots of
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
         A table of tables with slot properties string "size", string "type", string "property", boolean "required", boolean "exclusive", and (if applicable) outfit "outfit"
@@ -463,7 +464,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example"><span class="keyword">for</span> i, v <span class="keyword">in</span> <span class="global">ipairs</span>( ship.getSlots( ship.get(<span class="string">"Llama"</span>) ) ) <span class="keyword">do</span> <span class="global">print</span>(v[<span class="string">"type"</span>]) <span class="keyword">end</span></pre>
     </ul>
@@ -477,7 +478,7 @@
     Checks to see if an outfit fits a ship slot.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">s</span>
             <span class="types"><span class="type">Ship</span></span>
@@ -493,7 +494,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -512,7 +513,7 @@
     Gets the ship available CPU.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">s</span>
             <span class="types"><span class="type">Ship</span></span>
@@ -520,7 +521,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span></span>
@@ -529,7 +530,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">cpu_left = s:cpu()</pre>
     </ul>
@@ -543,7 +544,7 @@
     Gets the ship's price, with and without default outfits.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">s</span>
             <span class="types"><span class="type">Ship</span></span>
@@ -551,7 +552,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
         <li>
            <span class="types"><span class="type">number</span></span>
@@ -563,7 +564,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">price, base = s:price()</pre>
     </ul>
@@ -579,7 +580,7 @@
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">s</span>
             <span class="types"><span class="type">Ship</span></span>
@@ -587,7 +588,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">Tex</span></span>
@@ -596,7 +597,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">gfx = s:gfxTarget()</pre>
     </ul>
@@ -612,7 +613,7 @@
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">s</span>
             <span class="types"><span class="type">Ship</span></span>
@@ -620,7 +621,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">Tex</span></span>
@@ -629,7 +630,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">gfx = s:gfx()</pre>
     </ul>
@@ -643,7 +644,7 @@
     Gets the description of the ship.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">s</span>
             <span class="types"><span class="type">Ship</span></span>
@@ -651,7 +652,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -660,7 +661,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">description = s:description()</pre>
     </ul>
@@ -674,7 +675,7 @@
     Gets a shipstat from an Ship by name, or a table containing all the ship stats if not specified.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">s</span>
             <span class="types"><span class="type">Ship</span></span>
@@ -692,7 +693,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
         Value of the ship stat or a tale containing all the ship stats if name is not specified.
@@ -705,11 +706,12 @@
 </dl>
 
 
+</main>
 </div> <!-- id="content" -->
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2023-01-29 17:09:45 </i>
+<i style="float:right;">Last updated 2023-01-29 17:40:54 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 

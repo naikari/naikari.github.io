@@ -31,17 +31,16 @@
 
 
 <!-- Menu -->
-
 <div id="navigation">
-<br/>
-<h1>Naikari Lua API</h1>
+<nav title="Naikari Lua API">
+<h2>Naikari Lua API</h2>
 
 <ul>
   <li><a href="../index.html">Index</a></li>
 </ul>
 
 
-<h2>Modules</h2>
+<h3>Modules</h3>
 <ul class="$(kind=='Topics' and '' or 'nowrap'">
   <li><a href="../modules/ai.html">ai</a></li>
   <li><a href="../modules/fleet.html">fleet</a></li>
@@ -91,18 +90,20 @@
   <li><a href="../modules/prng.html">prng</a></li>
 </ul>
 
+</nav>
 </div>
 
 <div id="content">
+<main>
 
-<h1>Module <code>file</code></h1>
+<h2>Module <code>file</code></h2>
 <p>Lua bindings to interact with files.</p>
 <p>
 <p> <b>Note:</b> The API here is designed to be compatible with that of LÖVE.
 </p>
 
 
-<h2><a href="#Functions">Functions</a></h2>
+<h3><a href="#Functions">Functions</a></h3>
 <table class="function_list">
 	<tr>
 	<td class="name" nowrap><a href="#__gc">__gc (file)</a></td>
@@ -166,7 +167,7 @@
 <br/>
 
 
-    <h2><a name="Functions"></a>Functions</h2>
+    <h3><a name="Functions"></a>Functions</h3>
 
     <dl class="function">
     <dt>
@@ -177,7 +178,7 @@
     Frees a file.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">file</span>
             <span class="types"><span class="type">File</span></span>
@@ -198,7 +199,7 @@
     Compares two files to see if they are the same.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">f1</span>
             <span class="types"><span class="type">File</span></span>
@@ -210,7 +211,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -229,7 +230,7 @@
     Opens a new file.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">path</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -237,7 +238,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">File</span></span>
@@ -256,7 +257,7 @@
     Opens a File object.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">File</span>
             <span class="types"><span class="type">File</span></span>
@@ -268,7 +269,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -287,7 +288,7 @@
     Closes a file.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">file</span>
             <span class="types"><span class="type">File</span></span>
@@ -295,7 +296,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">true</span></span>
@@ -314,7 +315,7 @@
     Reads from an open file.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">file</span>
             <span class="types"><span class="type">File</span></span>
@@ -327,7 +328,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
         <li>
            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -349,7 +350,7 @@
     Reads from an open file.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">file</span>
             <span class="types"><span class="type">File</span></span>
@@ -379,7 +380,7 @@
     Seeks in an open file.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">file</span>
             <span class="types"><span class="type">File</span></span>
@@ -391,7 +392,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -410,7 +411,7 @@
     Gets the name of a file object.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">file</span>
             <span class="types"><span class="type">File</span></span>
@@ -418,7 +419,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -437,7 +438,7 @@
     Gets the mode a file is currently in.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">file</span>
             <span class="types"><span class="type">File</span></span>
@@ -445,7 +446,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -464,7 +465,7 @@
     Gets the size of a file (must be open).
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">file</span>
             <span class="types"><span class="type">File</span></span>
@@ -472,7 +473,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span></span>
@@ -491,7 +492,7 @@
     Checks to see if a file is open.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">file</span>
             <span class="types"><span class="type">File</span></span>
@@ -499,7 +500,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -518,7 +519,7 @@
     Checks to see the filetype of a path.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">path</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -526,7 +527,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -545,7 +546,7 @@
     Makes a directory.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">dir</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -553,7 +554,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -567,11 +568,12 @@
 </dl>
 
 
+</main>
 </div> <!-- id="content" -->
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2023-01-29 17:09:45 </i>
+<i style="float:right;">Last updated 2023-01-29 17:40:54 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 

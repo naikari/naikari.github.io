@@ -31,17 +31,16 @@
 
 
 <!-- Menu -->
-
 <div id="navigation">
-<br/>
-<h1>Naikari Lua API</h1>
+<nav title="Naikari Lua API">
+<h2>Naikari Lua API</h2>
 
 <ul>
   <li><a href="../index.html">Index</a></li>
 </ul>
 
 
-<h2>Modules</h2>
+<h3>Modules</h3>
 <ul class="$(kind=='Topics' and '' or 'nowrap'">
   <li><a href="../modules/ai.html">ai</a></li>
   <li><a href="../modules/fleet.html">fleet</a></li>
@@ -91,11 +90,13 @@
   <li><a href="../modules/prng.html">prng</a></li>
 </ul>
 
+</nav>
 </div>
 
 <div id="content">
+<main>
 
-<h1>Module <code>tex</code></h1>
+<h2>Module <code>tex</code></h2>
 <p>Lua bindings to interact with OpenGL textures.</p>
 <p>
 <p> This will allow you to load textures.
@@ -108,7 +109,7 @@
 </p>
 
 
-<h2><a href="#Functions">Functions</a></h2>
+<h3><a href="#Functions">Functions</a></h3>
 <table class="function_list">
 	<tr>
 	<td class="name" nowrap><a href="#__gc">__gc (t)</a></td>
@@ -152,7 +153,7 @@
 <br/>
 
 
-    <h2><a name="Functions"></a>Functions</h2>
+    <h3><a name="Functions"></a>Functions</h3>
 
     <dl class="function">
     <dt>
@@ -163,7 +164,7 @@
     Frees the texture.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">t</span>
             <span class="types"><span class="type">Tex</span></span>
@@ -188,7 +189,7 @@
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">path</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a>, <span class="type">File</span> or <span class="type">Data</span></span>
@@ -216,7 +217,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">Tex</span></span>
@@ -225,7 +226,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <li><pre class="example">t = tex.open( <span class="string">"no_sprites.png"</span> )</pre></li>
         <li><pre class="example">t = tex.open( <span class="string">"spritesheet.png"</span>, <span class="number">6</span>, <span class="number">6</span> )</pre></li>
@@ -240,7 +241,7 @@
     Reads image data from a file.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">File</span>
             <span class="types"><span class="type">file</span></span>
@@ -248,7 +249,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
         <li>
            <span class="types"><span class="type">Data</span></span>
@@ -273,7 +274,7 @@
     Saves texture data as a png.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">t</span>
             <span class="types"><span class="type">Tex</span></span>
@@ -281,7 +282,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -300,7 +301,7 @@
     Gets the dimensions of the texture.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">t</span>
             <span class="types"><span class="type">Tex</span></span>
@@ -308,7 +309,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
         <li>
            <span class="types"><span class="type">number</span></span>
@@ -326,7 +327,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">w,h, sw,sh = t:dim()</pre>
     </ul>
@@ -340,7 +341,7 @@
     Gets the number of sprites in the texture.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">t</span>
             <span class="types"><span class="type">Tex</span></span>
@@ -348,7 +349,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
         <li>
            <span class="types"><span class="type">number</span></span>
@@ -363,7 +364,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">sprites, sx,sy = t:sprites()</pre>
     </ul>
@@ -377,7 +378,7 @@
     Gets the sprite that corresponds to a direction.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">t</span>
             <span class="types"><span class="type">Tex</span></span>
@@ -394,7 +395,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
         <li>
            <span class="types"><span class="type">number</span></span>
@@ -406,7 +407,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">sx, sy = t:spriteFromdir( <span class="global">math</span>.pi )</pre>
     </ul>
@@ -420,7 +421,7 @@
     Sets the texture minification and magnification filters.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">tex</span>
             <span class="types"><span class="type">Tex</span></span>
@@ -450,7 +451,7 @@
     Sets the texture wrapping.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">tex</span>
             <span class="types"><span class="type">Tex</span></span>
@@ -480,11 +481,12 @@
 </dl>
 
 
+</main>
 </div> <!-- id="content" -->
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2023-01-29 17:09:45 </i>
+<i style="float:right;">Last updated 2023-01-29 17:40:54 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 

@@ -31,17 +31,16 @@
 
 
 <!-- Menu -->
-
 <div id="navigation">
-<br/>
-<h1>Naikari Lua API</h1>
+<nav title="Naikari Lua API">
+<h2>Naikari Lua API</h2>
 
 <ul>
   <li><a href="../index.html">Index</a></li>
 </ul>
 
 
-<h2>Modules</h2>
+<h3>Modules</h3>
 <ul class="$(kind=='Topics' and '' or 'nowrap'">
   <li><a href="../modules/ai.html">ai</a></li>
   <li><a href="../modules/fleet.html">fleet</a></li>
@@ -91,11 +90,13 @@
   <li><a href="../modules/prng.html">prng</a></li>
 </ul>
 
+</nav>
 </div>
 
 <div id="content">
+<main>
 
-<h1>Module <code>planet</code></h1>
+<h2>Module <code>planet</code></h2>
 <p>This module allows you to handle the planets from Lua.</p>
 <p>
 <p> Generally you do something like:
@@ -109,7 +110,7 @@
 </p>
 
 
-<h2><a href="#Functions">Functions</a></h2>
+<h3><a href="#Functions">Functions</a></h3>
 <table class="function_list">
 	<tr>
 	<td class="name" nowrap><a href="#cur">cur ()</a></td>
@@ -221,7 +222,7 @@
 <br/>
 
 
-    <h2><a name="Functions"></a>Functions</h2>
+    <h3><a name="Functions"></a>Functions</h3>
 
     <dl class="function">
     <dt>
@@ -233,7 +234,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
         <li>
            <span class="types"><span class="type">Planet</span></span>
@@ -245,7 +246,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">p,s = planet.cur() <span class="comment">-- Gets current planet (assuming landed)</span></pre>
     </ul>
@@ -266,7 +267,7 @@
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">param</span>
             <span class="types"><span class="type">boolean</span>, <span class="type">Faction</span>, <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
@@ -274,7 +275,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
         <li>
            <span class="types"><span class="type">Planet</span></span>
@@ -286,7 +287,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <li><pre class="example">p,s = planet.get( <span class="string">"Anecu"</span> ) <span class="comment">-- Gets planet by name</span></pre></li>
         <li><pre class="example">p,s = planet.get( faction.get( <span class="string">"Empire"</span> ) ) <span class="comment">-- Gets random Empire planet</span></pre></li>
@@ -306,7 +307,7 @@
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">param</span>
             <span class="types"><span class="type">boolean</span>, <span class="type">Faction</span>, <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
@@ -314,7 +315,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
         <li>
            <span class="types"><span class="type">Planet</span></span>
@@ -337,7 +338,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">{Planet,...}</span></span>
@@ -356,7 +357,7 @@
     Gets the system corresponding to a planet.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">p</span>
             <span class="types"><span class="type">Planet</span></span>
@@ -364,7 +365,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">System</span> or <span class="type">nil</span></span>
@@ -383,7 +384,7 @@
     You can use the '==' operator within Lua to compare planets with this.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">p</span>
             <span class="types"><span class="type">Planet</span></span>
@@ -395,7 +396,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -404,7 +405,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <li><pre class="example"><span class="keyword">if</span> p.__eq( planet.get( <span class="string">"Anecu"</span> ) ) <span class="keyword">then</span> <span class="comment">-- Do something</span></pre></li>
         <li><pre class="example"><span class="keyword">if</span> p == planet.get( <span class="string">"Anecu"</span> ) <span class="keyword">then</span> <span class="comment">-- Do something</span></pre></li>
@@ -423,7 +424,7 @@
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">p</span>
             <span class="types"><span class="type">Planet</span></span>
@@ -431,7 +432,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -440,7 +441,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">name = p:name() <span class="comment">-- Equivalent to `_(p:nameRaw())`</span></pre>
     </ul>
@@ -458,7 +459,7 @@
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">p</span>
             <span class="types"><span class="type">Planet</span></span>
@@ -466,7 +467,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -475,7 +476,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">name = p:nameRaw()</pre>
     </ul>
@@ -489,7 +490,7 @@
     Gets the planet's radius.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">p</span>
             <span class="types"><span class="type">Planet</span></span>
@@ -497,7 +498,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span></span>
@@ -506,7 +507,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">radius = p:radius()</pre>
     </ul>
@@ -520,7 +521,7 @@
     Gets the planet's faction.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">p</span>
             <span class="types"><span class="type">Planet</span></span>
@@ -528,7 +529,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">Faction</span></span>
@@ -537,7 +538,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">f = p:faction()</pre>
     </ul>
@@ -551,7 +552,7 @@
     Gets a planet's colour based on its friendliness or hostility to the player.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">p</span>
             <span class="types"><span class="type">Pilot</span></span>
@@ -559,7 +560,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">Colour</span></span>
@@ -568,7 +569,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">col = p:colour()</pre>
     </ul>
@@ -582,7 +583,7 @@
     Gets the planet's (untranslated) class.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">p</span>
             <span class="types"><span class="type">Planet</span></span>
@@ -590,7 +591,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -599,7 +600,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">c = p:class()</pre>
     </ul>
@@ -626,7 +627,7 @@
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">p</span>
             <span class="types"><span class="type">Planet</span></span>
@@ -634,7 +635,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
@@ -645,7 +646,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <li><pre class="example"><span class="keyword">if</span> p:services()[<span class="string">"refuel"</span>] <span class="keyword">then</span> <span class="comment">-- Planet has refuel service.</span></pre></li>
         <li><pre class="example"><span class="keyword">if</span> p:services()[<span class="string">"shipyard"</span>] <span class="keyword">then</span> <span class="comment">-- Planet has shipyard service.</span></pre></li>
@@ -660,7 +661,7 @@
     Gets whether or not the player can land on the planet (or bribe it).
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">p</span>
             <span class="types"><span class="type">Planet</span></span>
@@ -668,7 +669,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
         <li>
            <span class="types"><span class="type">boolean</span></span>
@@ -680,7 +681,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">can_land, can_bribe = p:canLand()</pre>
     </ul>
@@ -695,7 +696,7 @@
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">p</span>
             <span class="types"><span class="type">Planet</span></span>
@@ -711,7 +712,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">p:landOverride( <span class="keyword">true</span> ) <span class="comment">-- Planet can land on p now.</span></pre>
     </ul>
@@ -725,7 +726,7 @@
     Gets the land override status for a planet.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">p</span>
             <span class="types"><span class="type">Planet</span></span>
@@ -733,7 +734,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">b</span></span>
@@ -742,7 +743,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example"><span class="keyword">if</span> p:getLandOverride() <span class="keyword">then</span> <span class="comment">-- Player can definitely land.</span></pre>
     </ul>
@@ -756,7 +757,7 @@
     Gets the position of the planet in the system.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">p</span>
             <span class="types"><span class="type">Planet</span></span>
@@ -764,7 +765,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">Vec2</span></span>
@@ -773,7 +774,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">v = p:pos()</pre>
     </ul>
@@ -787,7 +788,7 @@
     Gets the texture of the planet in space.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">p</span>
             <span class="types"><span class="type">Planet</span></span>
@@ -795,7 +796,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">Tex</span></span>
@@ -804,7 +805,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">gfx = p:gfxSpace()</pre>
     </ul>
@@ -818,7 +819,7 @@
     Gets the texture of the planet in exterior.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">p</span>
             <span class="types"><span class="type">Planet</span></span>
@@ -826,7 +827,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">Tex</span></span>
@@ -835,7 +836,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">gfx = p:gfxExterior()</pre>
     </ul>
@@ -849,7 +850,7 @@
     Gets the ships sold at a planet.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">p</span>
             <span class="types"><span class="type">Planet</span></span>
@@ -857,7 +858,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">{Ship,...}</span></span>
@@ -876,7 +877,7 @@
     Gets the outfits sold at a planet.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">p</span>
             <span class="types"><span class="type">Planet</span></span>
@@ -884,7 +885,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">{Outfit,...}</span></span>
@@ -903,7 +904,7 @@
     Gets the commodities sold at a planet.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">p</span>
             <span class="types"><span class="type">Pilot</span></span>
@@ -911,7 +912,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">{Commodity,...}</span></span>
@@ -930,7 +931,7 @@
     Checks to see if a planet is a black market.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">p</span>
             <span class="types"><span class="type">Planet</span></span>
@@ -938,7 +939,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -947,7 +948,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">b = p:blackmarket()</pre>
     </ul>
@@ -961,7 +962,7 @@
     Gets the planet's land condition.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">p</span>
             <span class="types"><span class="type">Planet</span></span>
@@ -969,7 +970,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">nil</span></span>
@@ -979,7 +980,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">s = p:restriction()</pre>
     </ul>
@@ -993,7 +994,7 @@
     Checks to see if a planet is known by the player.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">p</span>
             <span class="types"><span class="type">Planet</span></span>
@@ -1001,7 +1002,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -1010,7 +1011,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">b = p:known()</pre>
     </ul>
@@ -1024,7 +1025,7 @@
     Sets a planets's known state.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">p</span>
             <span class="types"><span class="type">Planet</span></span>
@@ -1040,7 +1041,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">p:setKnown( <span class="keyword">false</span> ) <span class="comment">-- Makes planet unknown.</span></pre>
     </ul>
@@ -1049,11 +1050,12 @@
 </dl>
 
 
+</main>
 </div> <!-- id="content" -->
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2023-01-29 17:09:45 </i>
+<i style="float:right;">Last updated 2023-01-29 17:40:54 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 

@@ -31,17 +31,16 @@
 
 
 <!-- Menu -->
-
 <div id="navigation">
-<br/>
-<h1>Naikari Lua API</h1>
+<nav title="Naikari Lua API">
+<h2>Naikari Lua API</h2>
 
 <ul>
   <li><a href="../index.html">Index</a></li>
 </ul>
 
 
-<h2>Modules</h2>
+<h3>Modules</h3>
 <ul class="$(kind=='Topics' and '' or 'nowrap'">
   <li><a href="../modules/ai.html">ai</a></li>
   <li><a href="../modules/fleet.html">fleet</a></li>
@@ -91,11 +90,13 @@
   <li><a href="../modules/prng.html">prng</a></li>
 </ul>
 
+</nav>
 </div>
 
 <div id="content">
+<main>
 
-<h1>Module <code>gui</code></h1>
+<h2>Module <code>gui</code></h2>
 <p>Lua bindings to interact with the GUI elements.</p>
 <p>
 <p> An example would be:
@@ -105,7 +106,7 @@
 </p>
 
 
-<h2><a href="#Functions">Functions</a></h2>
+<h3><a href="#Functions">Functions</a></h3>
 <table class="function_list">
 	<tr>
 	<td class="name" nowrap><a href="#viewport">viewport (x, y, w, h)</a></td>
@@ -181,7 +182,7 @@
 <br/>
 
 
-    <h2><a name="Functions"></a>Functions</h2>
+    <h3><a name="Functions"></a>Functions</h3>
 
     <dl class="function">
     <dt>
@@ -197,7 +198,7 @@
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -220,7 +221,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <li><pre class="example">gui.viewport( <span class="number">0</span>, <span class="number">0</span>, screen_w, screen_h ) <span class="comment">-- Resets viewport.</span></pre></li>
         <li><pre class="example">gui.viewport( <span class="number">0</span>, <span class="number">20</span>, screen_w, screen_h-<span class="number">20</span> ) <span class="comment">-- Gives 20 pixels for a bottom bar.</span></pre></li>
@@ -237,7 +238,7 @@
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">x</span>
          X position for the fps stuff.
@@ -260,7 +261,7 @@
     Initializes the mission OSD (on-screen display).
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -293,7 +294,7 @@
     Sets up the message box from which the player receives input.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">width</span>
             <span class="types"><span class="type">number</span></span>
@@ -322,7 +323,7 @@
     Sets the center of the omsg messages and width.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">width</span>
             <span class="types"><span class="type">number</span></span>
@@ -351,7 +352,7 @@
     Initializes the radar.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">circle</span>
             <span class="types"><span class="type">number</span></span>
@@ -370,7 +371,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">gui.radarInit( <span class="keyword">true</span>, <span class="number">82</span> ) <span class="comment">-- Circular radar with 82 radius.</span></pre>
     </ul>
@@ -393,7 +394,7 @@
 
 
 
-    <h3>See also:</h3>
+    <h4>See also:</h4>
     <ul>
          <li><a href="../modules/gui.html#radarInit">radarInit</a></li>
          <li><a href="../modules/gui.html#radarClose">radarClose</a></li>
@@ -412,7 +413,7 @@
 
 
 
-    <h3>See also:</h3>
+    <h4>See also:</h4>
     <ul>
          <li><a href="../modules/gui.html#radarInit">radarInit</a></li>
          <li><a href="../modules/gui.html#radarOpen">radarOpen</a></li>
@@ -428,7 +429,7 @@
     Renders the radar.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -443,7 +444,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">gui.radarRender( <span class="number">50</span>, <span class="number">50</span> )</pre>
     </ul>
@@ -457,7 +458,7 @@
     Sets the Lua planet target GFX.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">tex</span>
             <span class="types"><span class="type">Tex</span></span>
@@ -478,7 +479,7 @@
     Sets the Lua pilot target GFX.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">tex</span>
             <span class="types"><span class="type">Tex</span></span>
@@ -503,7 +504,7 @@
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">enable</span>
             <span class="types"><span class="type">boolean</span></span>
@@ -529,7 +530,7 @@
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">enable</span>
             <span class="types"><span class="type">boolean</span></span>
@@ -562,7 +563,7 @@
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">window</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -575,7 +576,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">gui.menuInfo(<span class="string">"ship"</span>) <span class="comment">-- Opens ship tab</span></pre>
     </ul>
@@ -593,7 +594,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">gui.menuSmall()</pre>
     </ul>
@@ -608,7 +609,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -627,7 +628,7 @@
     Sets map boundaries
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">top</span>
             <span class="types"><span class="type">number</span></span>
@@ -655,11 +656,12 @@
 </dl>
 
 
+</main>
 </div> <!-- id="content" -->
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2023-01-29 17:09:45 </i>
+<i style="float:right;">Last updated 2023-01-29 17:40:54 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 

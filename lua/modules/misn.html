@@ -31,17 +31,16 @@
 
 
 <!-- Menu -->
-
 <div id="navigation">
-<br/>
-<h1>Naikari Lua API</h1>
+<nav title="Naikari Lua API">
+<h2>Naikari Lua API</h2>
 
 <ul>
   <li><a href="../index.html">Index</a></li>
 </ul>
 
 
-<h2>Modules</h2>
+<h3>Modules</h3>
 <ul class="$(kind=='Topics' and '' or 'nowrap'">
   <li><a href="../modules/ai.html">ai</a></li>
   <li><a href="../modules/fleet.html">fleet</a></li>
@@ -91,11 +90,13 @@
   <li><a href="../modules/prng.html">prng</a></li>
 </ul>
 
+</nav>
 </div>
 
 <div id="content">
+<main>
 
-<h1>Module <code>misn</code></h1>
+<h2>Module <code>misn</code></h2>
 <p>Mission Lua bindings.</p>
 <p>
 <p> An example would be:
@@ -105,7 +106,7 @@
 </p>
 
 
-<h2><a href="#Functions">Functions</a></h2>
+<h3><a href="#Functions">Functions</a></h3>
 <table class="function_list">
 	<tr>
 	<td class="name" nowrap><a href="#setTitle">setTitle (title)</a></td>
@@ -197,7 +198,7 @@
 <br/>
 
 
-    <h2><a name="Functions"></a>Functions</h2>
+    <h3><a name="Functions"></a>Functions</h3>
 
     <dl class="function">
     <dt>
@@ -208,7 +209,7 @@
     Sets the current mission title.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">title</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -232,7 +233,7 @@
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">desc</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -253,7 +254,7 @@
     Sets the current mission reward description.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">reward</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -274,7 +275,7 @@
     Adds a new marker.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">sys</span>
             <span class="types"><span class="type">System</span></span>
@@ -287,7 +288,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span></span>
@@ -296,7 +297,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">my_marker = misn.markerAdd( system.get(<span class="string">"Gamma Polaris"</span>), <span class="string">"low"</span> )
 
@@ -316,7 +317,7 @@ Valid marker types are:&lt;br/&gt;
     Moves a marker to a new system.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">id</span>
             <span class="types"><span class="type">number</span></span>
@@ -331,7 +332,7 @@ Valid marker types are:&lt;br/&gt;
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">misn.markerMove( my_marker, system.get(<span class="string">"Delta Pavonis"</span>) )</pre>
     </ul>
@@ -345,7 +346,7 @@ Valid marker types are:&lt;br/&gt;
     Removes a mission system marker.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">id</span>
             <span class="types"><span class="type">number</span></span>
@@ -356,7 +357,7 @@ Valid marker types are:&lt;br/&gt;
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">misn.markerRm( my_marker )</pre>
     </ul>
@@ -376,7 +377,7 @@ Valid marker types are:&lt;br/&gt;
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">name</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -395,7 +396,7 @@ Valid marker types are:&lt;br/&gt;
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">misn.setNPC( <span class="string">"Invisible Man"</span>, <span class="string">"none.png"</span>, _(<span class="string">"You see a levitating mug drain itself."</span>) )</pre>
     </ul>
@@ -410,7 +411,7 @@ Valid marker types are:&lt;br/&gt;
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">{Faction,...}</span></span>
@@ -419,7 +420,7 @@ Valid marker types are:&lt;br/&gt;
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">f = misn.factions()</pre>
     </ul>
@@ -434,7 +435,7 @@ Valid marker types are:&lt;br/&gt;
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -443,7 +444,7 @@ Valid marker types are:&lt;br/&gt;
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example"><span class="keyword">if</span> <span class="keyword">not</span> misn.accept() <span class="keyword">then</span> <span class="keyword">return</span> <span class="keyword">end</span></pre>
     </ul>
@@ -457,7 +458,7 @@ Valid marker types are:&lt;br/&gt;
     Finishes the mission.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">properly</span>
             <span class="types"><span class="type">boolean</span></span>
@@ -491,7 +492,7 @@ Valid marker types are:&lt;br/&gt;
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">cargo</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -511,7 +512,7 @@ Valid marker types are:&lt;br/&gt;
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">Commodity</span></span>
@@ -543,7 +544,7 @@ Valid marker types are:&lt;br/&gt;
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">cargo</span>
             <span class="types"><span class="type">Commodity</span> or <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -557,7 +558,7 @@ Valid marker types are:&lt;br/&gt;
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span></span>
@@ -565,7 +566,7 @@ Valid marker types are:&lt;br/&gt;
     </ol>
 
 
-    <h3>See also:</h3>
+    <h4>See also:</h4>
     <ul>
          <li><a href="../modules/misn.html#cargoRm">cargoRm</a></li>
          <li><a href="../modules/misn.html#cargoJet">cargoJet</a></li>
@@ -583,7 +584,7 @@ Valid marker types are:&lt;br/&gt;
     Removes a mission cargo added by misn.cargoAdd().
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">cargoid</span>
             <span class="types"><span class="type">number</span></span>
@@ -591,7 +592,7 @@ Valid marker types are:&lt;br/&gt;
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -599,7 +600,7 @@ Valid marker types are:&lt;br/&gt;
     </ol>
 
 
-    <h3>See also:</h3>
+    <h4>See also:</h4>
     <ul>
          <li><a href="../modules/misn.html#cargoAdd">cargoAdd</a></li>
          <li><a href="../modules/misn.html#cargoJet">cargoJet</a></li>
@@ -619,7 +620,7 @@ Valid marker types are:&lt;br/&gt;
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">cargoid</span>
             <span class="types"><span class="type">number</span></span>
@@ -627,7 +628,7 @@ Valid marker types are:&lt;br/&gt;
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -635,7 +636,7 @@ Valid marker types are:&lt;br/&gt;
     </ol>
 
 
-    <h3>See also:</h3>
+    <h4>See also:</h4>
     <ul>
          <li><a href="../modules/misn.html#cargoAdd">cargoAdd</a></li>
          <li><a href="../modules/misn.html#cargoRm">cargoRm</a></li>
@@ -655,7 +656,7 @@ Valid marker types are:&lt;br/&gt;
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">title</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -670,7 +671,7 @@ Valid marker types are:&lt;br/&gt;
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">misn.osdCreate( <span class="string">"My OSD"</span>, {<span class="string">"Element 1"</span>, <span class="string">"Element 2"</span>})</pre>
     </ul>
@@ -700,7 +701,7 @@ Valid marker types are:&lt;br/&gt;
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">n</span>
             <span class="types"><span class="type">number</span></span>
@@ -722,7 +723,7 @@ Valid marker types are:&lt;br/&gt;
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">nil</span></span>
@@ -742,7 +743,7 @@ Valid marker types are:&lt;br/&gt;
     Adds an NPC.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">func</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -775,7 +776,7 @@ Valid marker types are:&lt;br/&gt;
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span></span>
@@ -784,7 +785,7 @@ Valid marker types are:&lt;br/&gt;
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">npc_id = misn.npcAdd( <span class="string">"my_func"</span>, <span class="string">"Mr. Test"</span>, <span class="string">"none.webp"</span>, <span class="string">"A test."</span> ) <span class="comment">-- Creates an NPC.</span></pre>
     </ul>
@@ -798,7 +799,7 @@ Valid marker types are:&lt;br/&gt;
     Removes an NPC.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">id</span>
             <span class="types"><span class="type">number</span></span>
@@ -809,7 +810,7 @@ Valid marker types are:&lt;br/&gt;
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">misn.npcRm( npc_id )</pre>
     </ul>
@@ -827,7 +828,7 @@ Valid marker types are:&lt;br/&gt;
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">params</span>
             <span class="types"><span class="type">System</span>, <span class="type">String</span> or <span class="type">{System,String...}</span></span>
@@ -840,7 +841,7 @@ Valid marker types are:&lt;br/&gt;
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -849,7 +850,7 @@ Valid marker types are:&lt;br/&gt;
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <li><pre class="example"><span class="keyword">if</span> <span class="keyword">not</span> misn.claim( { system.get(<span class="string">"Gamma Polaris"</span>) } ) <span class="keyword">then</span> misn.finish( <span class="keyword">false</span> ) <span class="keyword">end</span></pre></li>
         <li><pre class="example"><span class="keyword">if</span> <span class="keyword">not</span> misn.claim( system.get(<span class="string">"Gamma Polaris"</span>) ) <span class="keyword">then</span> misn.finish( <span class="keyword">false</span> ) <span class="keyword">end</span></pre></li>
@@ -861,11 +862,12 @@ Valid marker types are:&lt;br/&gt;
 </dl>
 
 
+</main>
 </div> <!-- id="content" -->
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2023-01-29 17:09:45 </i>
+<i style="float:right;">Last updated 2023-01-29 17:40:54 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 

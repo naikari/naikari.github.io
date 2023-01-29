@@ -31,17 +31,16 @@
 
 
 <!-- Menu -->
-
 <div id="navigation">
-<br/>
-<h1>Naikari Lua API</h1>
+<nav title="Naikari Lua API">
+<h2>Naikari Lua API</h2>
 
 <ul>
   <li><a href="../index.html">Index</a></li>
 </ul>
 
 
-<h2>Modules</h2>
+<h3>Modules</h3>
 <ul class="$(kind=='Topics' and '' or 'nowrap'">
   <li><a href="../modules/ai.html">ai</a></li>
   <li><a href="../modules/fleet.html">fleet</a></li>
@@ -91,17 +90,19 @@
   <li><a href="../modules/prng.html">prng</a></li>
 </ul>
 
+</nav>
 </div>
 
 <div id="content">
+<main>
 
-<h1>Module <code>audio</code></h1>
+<h2>Module <code>audio</code></h2>
 <p>Lua bindings to interact with audio.</p>
 <p>
 <p></p>
 
 
-<h2><a href="#Functions">Functions</a></h2>
+<h3><a href="#Functions">Functions</a></h3>
 <table class="function_list">
 	<tr>
 	<td class="name" nowrap><a href="#__gc">__gc (audio)</a></td>
@@ -209,7 +210,7 @@
 <br/>
 
 
-    <h2><a name="Functions"></a>Functions</h2>
+    <h3><a name="Functions"></a>Functions</h3>
 
     <dl class="function">
     <dt>
@@ -220,7 +221,7 @@
     Frees a audio.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">audio</span>
             <span class="types"><span class="type">Audio</span></span>
@@ -241,7 +242,7 @@
     Compares two audios to see if they are the same.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">a1</span>
             <span class="types"><span class="type">Audio</span></span>
@@ -253,7 +254,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -272,7 +273,7 @@
     Creates a new audio source.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">data</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">File</span></span>
@@ -280,7 +281,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">Audio</span></span>
@@ -299,7 +300,7 @@
     Clones an existing audio source.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">source</span>
             <span class="types"><span class="type">Audio</span></span>
@@ -307,7 +308,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">Audio</span></span>
@@ -326,7 +327,7 @@
     Plays a source.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">source</span>
             <span class="types"><span class="type">Audio</span></span>
@@ -334,7 +335,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -353,7 +354,7 @@
     Pauses a source.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">source</span>
             <span class="types"><span class="type">Audio</span></span>
@@ -361,7 +362,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -380,7 +381,7 @@
     Checks to see if a source is paused.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">source</span>
             <span class="types"><span class="type">Audio</span></span>
@@ -388,7 +389,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -407,7 +408,7 @@
     Stops a source.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">source</span>
             <span class="types"><span class="type">Audio</span></span>
@@ -428,7 +429,7 @@
     Checks to see if a source is stopped.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">source</span>
             <span class="types"><span class="type">Audio</span></span>
@@ -436,7 +437,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -455,7 +456,7 @@
     Rewinds a source.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">source</span>
             <span class="types"><span class="type">Audio</span></span>
@@ -476,7 +477,7 @@
     Seeks a source.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">source</span>
             <span class="types"><span class="type">Audio</span></span>
@@ -506,7 +507,7 @@
     Gets the position of a source.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">source</span>
             <span class="types"><span class="type">Audio</span></span>
@@ -519,7 +520,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span></span>
@@ -538,7 +539,7 @@
     Sets the volume of a source.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">source</span>
             <span class="types"><span class="type">Audio</span></span>
@@ -563,7 +564,7 @@
     Gets the volume of a source.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">source</span>
             <span class="types"><span class="type">Audio</span></span>
@@ -571,7 +572,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span></span>
@@ -590,7 +591,7 @@
     Sets whether a source is relative or not.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">relative</span>
             <span class="types"><span class="type">boolean</span></span>
@@ -611,7 +612,7 @@
     Sets the position of a source.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">source</span>
             <span class="types"><span class="type">Audio</span></span>
@@ -644,7 +645,7 @@
     Gets the position of a source.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">source</span>
             <span class="types"><span class="type">Audio</span></span>
@@ -652,7 +653,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
         <li>
            <span class="types"><span class="type">number</span></span>
@@ -677,7 +678,7 @@
     Sets the velocity of a source.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">source</span>
             <span class="types"><span class="type">Audio</span></span>
@@ -710,7 +711,7 @@
     Gets the velocity of a source.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">source</span>
             <span class="types"><span class="type">Audio</span></span>
@@ -718,7 +719,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
         <li>
            <span class="types"><span class="type">number</span></span>
@@ -743,7 +744,7 @@
     Sets a source to be looping or not.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">source</span>
             <span class="types"><span class="type">Audio</span></span>
@@ -768,7 +769,7 @@
     Gets the looping state of a source.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">source</span>
             <span class="types"><span class="type">Audio</span></span>
@@ -776,7 +777,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -795,7 +796,7 @@
     Sets the pitch of a source.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">source</span>
             <span class="types"><span class="type">Audio</span></span>
@@ -820,7 +821,7 @@
     Gets the pitch of a source.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">source</span>
             <span class="types"><span class="type">Audio</span></span>
@@ -828,7 +829,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span></span>
@@ -849,7 +850,7 @@
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">s</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -870,7 +871,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <li><pre class="example">audio.soundPlay( <span class="string">"hail"</span> ) <span class="comment">-- Plays the hail sound</span></pre></li>
         <li><pre class="example">audio.soundPlay( <span class="string">"hail"</span>, pos ) <span class="comment">-- Plays the hail sound at position pos</span></pre></li>
@@ -886,7 +887,7 @@
     Sets effect stuff, behaves different if the first paramater is a source or not.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">name</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -898,7 +899,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -907,7 +908,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <li><pre class="example">audio.setEffect( <span class="string">"reverb"</span>, { <span class="global">type</span>=<span class="string">"reverb"</span> } )</pre></li>
         <li><pre class="example">source:setEffect( <span class="string">"reverb"</span> )</pre></li>
@@ -917,11 +918,12 @@
 </dl>
 
 
+</main>
 </div> <!-- id="content" -->
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2023-01-29 17:09:45 </i>
+<i style="float:right;">Last updated 2023-01-29 17:40:54 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 

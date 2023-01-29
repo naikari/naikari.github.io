@@ -31,17 +31,16 @@
 
 
 <!-- Menu -->
-
 <div id="navigation">
-<br/>
-<h1>Naikari Lua API</h1>
+<nav title="Naikari Lua API">
+<h2>Naikari Lua API</h2>
 
 <ul>
   <li><a href="../index.html">Index</a></li>
 </ul>
 
 
-<h2>Modules</h2>
+<h3>Modules</h3>
 <ul class="$(kind=='Topics' and '' or 'nowrap'">
   <li><strong>ai</strong></li>
   <li><a href="../modules/fleet.html">fleet</a></li>
@@ -91,11 +90,13 @@
   <li><a href="../modules/prng.html">prng</a></li>
 </ul>
 
+</nav>
 </div>
 
 <div id="content">
+<main>
 
-<h1>Module <code>ai</code></h1>
+<h2>Module <code>ai</code></h2>
 <p>Controls the Pilot AI.</p>
 <p>
 <p> AI Overview
@@ -137,7 +138,7 @@
          subsystems and is pretty lacking in quite a few aspects. </p>
 
 
-<h2><a href="#Functions">Functions</a></h2>
+<h3><a href="#Functions">Functions</a></h3>
 <table class="function_list">
 	<tr>
 	<td class="name" nowrap><a href="#pushtask">pushtask (func[, data])</a></td>
@@ -459,7 +460,7 @@
 <br/>
 
 
-    <h2><a name="Functions"></a>Functions</h2>
+    <h3><a name="Functions"></a>Functions</h3>
 
     <dl class="function">
     <dt>
@@ -470,7 +471,7 @@
     Pushes a task onto the pilot's task list.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">func</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -510,7 +511,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -530,14 +531,14 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
         The pilot's task data or nil if there is no task data.
     </ol>
 
 
-    <h3>See also:</h3>
+    <h4>See also:</h4>
     <ul>
          <a href="../modules/ai.html#pushtask">pushtask</a>
     </ul>
@@ -552,7 +553,7 @@
     Pushes a subtask onto the pilot's task's subtask list.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">func</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -592,7 +593,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -612,14 +613,14 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
         The pilot's target ship identifier or nil if no target.
     </ol>
 
 
-    <h3>See also:</h3>
+    <h4>See also:</h4>
     <ul>
          <a href="../modules/ai.html#pushsubtask">pushsubtask</a>
     </ul>
@@ -635,7 +636,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">Pilot</span></span>
@@ -655,7 +656,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">Pilot</span> or <span class="type">nil</span></span>
@@ -675,7 +676,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">Pilot</span> or <span class="type">nil</span></span>
@@ -694,7 +695,7 @@
     Gets the distance from the pointer.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">pointer</span>
             <span class="types"><span class="type">Vec2</span> or <span class="type">Pilot</span></span>
@@ -702,7 +703,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span></span>
@@ -721,7 +722,7 @@
     Gets the distance from the pointer perpendicular to the current pilot's flight vector.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">pointer</span>
             <span class="types"><span class="type">Vec2</span> or <span class="type">Pilot</span></span>
@@ -729,7 +730,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span></span>
@@ -755,7 +756,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span></span>
@@ -774,7 +775,7 @@
     Checks to see if target has bribed pilot.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">target</span>
             <span class="types"><span class="type">Pilot</span></span>
@@ -782,7 +783,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -802,7 +803,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -821,7 +822,7 @@
     Gets the standing of the target pilot with the current pilot.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">target</span>
             <span class="types"><span class="type">Pilot</span></span>
@@ -829,7 +830,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span> or <span class="type">nil</span></span>
@@ -849,7 +850,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -869,7 +870,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -888,7 +889,7 @@
     Checks to see if target is an enemy.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">target</span>
             <span class="types"><span class="type">Pilot</span></span>
@@ -896,7 +897,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -915,7 +916,7 @@
     Checks to see if target is an ally.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">target</span>
             <span class="types"><span class="type">Pilot</span></span>
@@ -923,7 +924,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -943,7 +944,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -963,7 +964,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -982,7 +983,7 @@
     Starts accelerating the pilot.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">acceleration</span>
             <span class="types"><span class="type">number</span></span>
@@ -1004,7 +1005,7 @@
     Starts turning the pilot.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">vel</span>
             <span class="types"><span class="type">number</span></span>
@@ -1025,7 +1026,7 @@
     Faces the target.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">target</span>
             <span class="types"><span class="type">Pilot</span> or <span class="type">Vec2</span></span>
@@ -1041,7 +1042,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span></span>
@@ -1050,7 +1051,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <li><pre class="example">ai.face( a_pilot ) <span class="comment">-- Face a pilot</span></pre></li>
         <li><pre class="example">ai.face( a_pilot, <span class="keyword">true</span> ) <span class="comment">-- Face away from a pilot</span></pre></li>
@@ -1074,7 +1075,7 @@
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">target</span>
             <span class="types"><span class="type">Pilot</span>, <span class="type">Vec2</span> or <span class="type">number</span></span>
@@ -1097,7 +1098,7 @@
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">target</span>
             <span class="types"><span class="type">Pilot</span></span>
@@ -1105,7 +1106,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span></span>
@@ -1124,7 +1125,7 @@
     Maintains an intercept pursuit course.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">target</span>
             <span class="types"><span class="type">Pilot</span> or <span class="type">Vec2</span></span>
@@ -1132,7 +1133,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span></span>
@@ -1151,7 +1152,7 @@
     calculates the direction that the target is relative to the current pilot facing.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">target</span>
             <span class="types"><span class="type">Pilot</span> or <span class="type">Vec2</span></span>
@@ -1159,7 +1160,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span></span>
@@ -1178,7 +1179,7 @@
     calculates angle between pilot facing and intercept-course to target.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">target</span>
             <span class="types"><span class="type">Pilot</span> or <span class="type">Vec2</span></span>
@@ -1186,7 +1187,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span></span>
@@ -1206,7 +1207,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span></span>
@@ -1226,7 +1227,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -1246,7 +1247,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">Planet</span> or <span class="type">nil</span></span>
@@ -1265,7 +1266,7 @@
     Get the nearest friendly planet to a given position.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">pos</span>
             <span class="types"><span class="type">vec2</span></span>
@@ -1273,7 +1274,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">Planet</span> or <span class="type">nil</span></span>
@@ -1293,7 +1294,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">Planet</span> or <span class="type">nil</span></span>
@@ -1312,7 +1313,7 @@
     Get a random friendly planet.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">only_friend</span>
             <span class="types"><span class="type">boolean</span></span>
@@ -1320,7 +1321,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">Planet</span> or <span class="type">nil</span></span>
@@ -1340,7 +1341,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -1360,7 +1361,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span> or <span class="type">nil</span></span>
@@ -1380,7 +1381,7 @@
     Sets hyperspace target.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">target</span>
             <span class="types"><span class="type">Jump</span></span>
@@ -1388,7 +1389,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
         Vec2 Where to go to jump
@@ -1407,7 +1408,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">JumpPoint</span> or <span class="type">nil</span></span>
@@ -1427,7 +1428,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">JumpPoint</span> or <span class="type">nil</span></span>
@@ -1447,7 +1448,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span></span>
@@ -1467,7 +1468,7 @@
         follow an other pilot using a PD controller.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">target</span>
             <span class="types"><span class="type">Pilot</span></span>
@@ -1496,7 +1497,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
         The point to go to as a vector2.
@@ -1514,7 +1515,7 @@
     Computes the point to face in order to follow a moving object.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">pos</span>
             <span class="types"><span class="type">vec2</span></span>
@@ -1542,7 +1543,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
         The point to go to as a vector2.
@@ -1574,7 +1575,7 @@
     Docks the ship.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">target</span>
             <span class="types"><span class="type">Pilot</span></span>
@@ -1595,7 +1596,7 @@
     Sets the combat flag.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">val</span>
             <span class="types"><span class="type">boolean</span></span>
@@ -1617,7 +1618,7 @@
     Sets the pilot's target.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">target</span>
          Pilot to target.
@@ -1637,7 +1638,7 @@
     Sets the pilot's asteroid target.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">int</span>
          ast Id of the asteroid to target.
@@ -1660,14 +1661,14 @@
     Gets the closest gatherable within a radius.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">float</span>
          rad Radius to search in.
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
         int i Id of the gatherable or nil if none found.
@@ -1685,14 +1686,14 @@
     Gets the pos and vel of a given gatherable.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">int</span>
          id Id of the gatherable.
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
         <li>
         vec2 pos position of the gatherable.</li>
@@ -1736,7 +1737,7 @@
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">id</span>
             <span class="types"><span class="type">number</span> or <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -1765,7 +1766,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -1785,7 +1786,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -1805,7 +1806,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -1824,7 +1825,7 @@
     Makes the pilot shoot
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">secondary</span>
             <span class="types"><span class="type">boolean</span></span>
@@ -1847,7 +1848,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">Pilot</span> or <span class="type">nil</span></span>
@@ -1866,7 +1867,7 @@
     Gets the nearest enemy within specified size bounds.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">lb</span>
             <span class="types"><span class="type">number</span></span>
@@ -1878,7 +1879,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">Pilot</span></span>
@@ -1897,7 +1898,7 @@
     Gets the nearest enemy within specified heuristic.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">mass</span>
             <span class="types"><span class="type">number</span></span>
@@ -1917,7 +1918,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">Pilot</span></span>
@@ -1936,7 +1937,7 @@
     Sets the enemy hostile (basically notifies of an impending attack).
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">target</span>
             <span class="types"><span class="type">Pilot</span></span>
@@ -1957,7 +1958,7 @@
     Gets the range of a weapon.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">id</span>
             <span class="types"><span class="type">number</span> or <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -1974,7 +1975,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span></span>
@@ -1993,7 +1994,7 @@
     Gets the speed of a weapon.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">id</span>
             <span class="types"><span class="type">number</span> or <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -2010,7 +2011,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span></span>
@@ -2029,7 +2030,7 @@
     Gets the ammo of a weapon.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">id</span>
             <span class="types"><span class="type">number</span> or <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -2046,7 +2047,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span></span>
@@ -2065,7 +2066,7 @@
     Checks to see if pilot can board the target.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">target</span>
             <span class="types"><span class="type">Pilot</span></span>
@@ -2073,7 +2074,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -2092,7 +2093,7 @@
     Gets the relative size (ship mass) between the current pilot and the specified target.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">target</span>
             <span class="types"><span class="type">Pilot</span></span>
@@ -2100,7 +2101,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span></span>
@@ -2119,7 +2120,7 @@
     Gets the relative damage output (total DPS) between the current pilot and the specified target.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">target</span>
             <span class="types"><span class="type">Pilot</span></span>
@@ -2127,7 +2128,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span></span>
@@ -2146,7 +2147,7 @@
     Gets the relative health (total shields and armour) between the current pilot and the specified target
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">target</span>
             <span class="types"><span class="type">Pilot</span></span>
@@ -2154,7 +2155,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span></span>
@@ -2174,7 +2175,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -2194,7 +2195,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -2213,7 +2214,7 @@
     Sets a timer.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">timer</span>
             <span class="types"><span class="type">number</span></span>
@@ -2239,7 +2240,7 @@
     Checks a timer.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">timer</span>
             <span class="types"><span class="type">number</span></span>
@@ -2247,7 +2248,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -2266,7 +2267,7 @@
     Set the seeker shoot indicator.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">value</span>
             <span class="types"><span class="type">boolean</span></span>
@@ -2288,7 +2289,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -2307,7 +2308,7 @@
     Sends a distress signal.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">msg</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -2330,7 +2331,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">Pilot</span> or <span class="type">nil</span></span>
@@ -2350,7 +2351,7 @@
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">num</span>
             <span class="types"><span class="type">number</span></span>
@@ -2372,7 +2373,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">{{},...}</span></span>
@@ -2386,11 +2387,12 @@
 </dl>
 
 
+</main>
 </div> <!-- id="content" -->
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2023-01-29 17:09:45 </i>
+<i style="float:right;">Last updated 2023-01-29 17:40:54 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 

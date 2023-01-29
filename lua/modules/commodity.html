@@ -31,17 +31,16 @@
 
 
 <!-- Menu -->
-
 <div id="navigation">
-<br/>
-<h1>Naikari Lua API</h1>
+<nav title="Naikari Lua API">
+<h2>Naikari Lua API</h2>
 
 <ul>
   <li><a href="../index.html">Index</a></li>
 </ul>
 
 
-<h2>Modules</h2>
+<h3>Modules</h3>
 <ul class="$(kind=='Topics' and '' or 'nowrap'">
   <li><a href="../modules/ai.html">ai</a></li>
   <li><a href="../modules/fleet.html">fleet</a></li>
@@ -91,11 +90,13 @@
   <li><a href="../modules/prng.html">prng</a></li>
 </ul>
 
+</nav>
 </div>
 
 <div id="content">
+<main>
 
-<h1>Module <code>commodity</code></h1>
+<h2>Module <code>commodity</code></h2>
 <p>Lua bindings to interact with commodities.</p>
 <p>
 <p> This will allow you to create and manipulate commodities in-game.
@@ -109,7 +110,7 @@
 </p>
 
 
-<h2><a href="#Functions">Functions</a></h2>
+<h3><a href="#Functions">Functions</a></h3>
 <table class="function_list">
 	<tr>
 	<td class="name" nowrap><a href="#__eq">__eq (o1, o2)</a></td>
@@ -149,7 +150,7 @@
 <br/>
 
 
-    <h2><a name="Functions"></a>Functions</h2>
+    <h3><a name="Functions"></a>Functions</h3>
 
     <dl class="function">
     <dt>
@@ -160,7 +161,7 @@
     Checks to see if two commodities are the same.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">o1</span>
             <span class="types"><span class="type">Commodity</span></span>
@@ -172,7 +173,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">boolean</span></span>
@@ -181,7 +182,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example"><span class="keyword">if</span> o1 == o2 <span class="keyword">then</span> <span class="comment">-- Checks to see if commodity o1 and o2 are the same</span></pre>
     </ul>
@@ -195,7 +196,7 @@
     Gets a commodity.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">s</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -203,7 +204,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">Commodity</span> or <span class="type">nil</span></span>
@@ -212,7 +213,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">s = commodity.get( <span class="string">"Food"</span> ) <span class="comment">-- Gets the food commodity</span></pre>
     </ul>
@@ -227,7 +228,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
@@ -250,7 +251,7 @@
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">s</span>
             <span class="types"><span class="type">Commodity</span></span>
@@ -258,7 +259,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -267,7 +268,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">commodityname = s:name() <span class="comment">-- Equivalent to `_(s:nameRaw())`</span></pre>
     </ul>
@@ -286,7 +287,7 @@
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">s</span>
             <span class="types"><span class="type">Commodity</span></span>
@@ -294,7 +295,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
@@ -303,7 +304,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">commodityrawname = s:nameRaw()</pre>
     </ul>
@@ -317,7 +318,7 @@
     Gets the base price of an commodity.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">o</span>
             <span class="types"><span class="type">Commodity</span></span>
@@ -325,7 +326,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span></span>
@@ -334,7 +335,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example"><span class="global">print</span>( o:price() ) <span class="comment">-- Prints the base price of the commodity</span></pre>
     </ul>
@@ -348,7 +349,7 @@
     Gets the base price of an commodity on a certain planet.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">o</span>
             <span class="types"><span class="type">Commodity</span></span>
@@ -360,7 +361,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span></span>
@@ -369,7 +370,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example"><span class="keyword">if</span> o:priceAt( planet.get(<span class="string">"Polaris Prime"</span>) ) &gt; <span class="number">100</span> <span class="keyword">then</span> <span class="comment">-- Checks price of an outfit at polaris prime</span></pre>
     </ul>
@@ -383,7 +384,7 @@
     Gets the price of an commodity on a certain planet at a certain time.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">o</span>
             <span class="types"><span class="type">Commodity</span></span>
@@ -399,7 +400,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span></span>
@@ -408,7 +409,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example"><span class="keyword">if</span> o:priceAtTime( planet.get(<span class="string">"Polaris Prime"</span>), time ) &gt; <span class="number">100</span> <span class="keyword">then</span> <span class="comment">-- Checks price of an outfit at polaris prime</span></pre>
     </ul>
@@ -417,11 +418,12 @@
 </dl>
 
 
+</main>
 </div> <!-- id="content" -->
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2023-01-29 17:09:45 </i>
+<i style="float:right;">Last updated 2023-01-29 17:40:54 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 

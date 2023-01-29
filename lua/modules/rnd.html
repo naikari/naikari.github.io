@@ -31,17 +31,16 @@
 
 
 <!-- Menu -->
-
 <div id="navigation">
-<br/>
-<h1>Naikari Lua API</h1>
+<nav title="Naikari Lua API">
+<h2>Naikari Lua API</h2>
 
 <ul>
   <li><a href="../index.html">Index</a></li>
 </ul>
 
 
-<h2>Modules</h2>
+<h3>Modules</h3>
 <ul class="$(kind=='Topics' and '' or 'nowrap'">
   <li><a href="../modules/ai.html">ai</a></li>
   <li><a href="../modules/fleet.html">fleet</a></li>
@@ -91,11 +90,13 @@
   <li><a href="../modules/prng.html">prng</a></li>
 </ul>
 
+</nav>
 </div>
 
 <div id="content">
+<main>
 
-<h1>Module <code>rnd</code></h1>
+<h2>Module <code>rnd</code></h2>
 <p>Bindings for interacting with the random number generator.</p>
 <p>
 <p> This module not only allows basic random number generation, but it also
@@ -111,7 +112,7 @@
 </p>
 
 
-<h2><a href="#Functions">Functions</a></h2>
+<h3><a href="#Functions">Functions</a></h3>
 <table class="function_list">
 	<tr>
 	<td class="name" nowrap><a href="#rnd">rnd (x, y)</a></td>
@@ -143,7 +144,7 @@
 <br/>
 
 
-    <h2><a name="Functions"></a>Functions</h2>
+    <h3><a name="Functions"></a>Functions</h3>
 
     <dl class="function">
     <dt>
@@ -159,7 +160,7 @@
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -171,7 +172,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span></span>
@@ -180,7 +181,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <li><pre class="example">n = rnd() <span class="comment">-- Number in range [0:1].</span></pre></li>
         <li><pre class="example">n = rnd(<span class="number">5</span>) <span class="comment">-- Number in range [0:5].</span></pre></li>
@@ -201,7 +202,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span></span>
@@ -210,7 +211,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">n = <span class="number">5.5</span> + rnd.sigma()/<span class="number">2.</span> <span class="comment">-- Creates a number from 5 to 6 slightly biased to 5.5.</span></pre>
     </ul>
@@ -230,7 +231,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span></span>
@@ -239,7 +240,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">n = <span class="number">5.5</span> + rnd.twosigma()/<span class="number">4.</span> <span class="comment">-- Creates a number from 5 to 6 heavily biased to 5.5.</span></pre>
     </ul>
@@ -260,7 +261,7 @@
 
 
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span></span>
@@ -269,7 +270,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <pre class="example">n = <span class="number">5.5</span> + rnd.threesigma()/<span class="number">6.</span> <span class="comment">-- Creates a number from 5 to 6 totally biased to 5.5.</span></pre>
     </ul>
@@ -283,7 +284,7 @@
     Gets a random number in the given range, with a uniform distribution.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -295,7 +296,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">number</span></span>
@@ -304,7 +305,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <li><pre class="example">n = uniform() <span class="comment">-- Real number in the interval [0,1].</span></pre></li>
         <li><pre class="example">n = uniform(<span class="number">5</span>) <span class="comment">-- Real number in the interval [0,5].</span></pre></li>
@@ -323,7 +324,7 @@
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">input</span>
             <span class="types"><span class="type">number</span> or <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
@@ -331,7 +332,7 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
@@ -340,7 +341,7 @@
 
 
 
-    <h3>Usage:</h3>
+    <h4>Usage:</h4>
     <ul>
         <li><pre class="example">t = rnd.permutation( <span class="number">5</span> )</pre></li>
         <li><pre class="example">t = rnd.permutation( {<span class="string">"cat"</span>, <span class="string">"dog"</span>, <span class="string">"cheese"</span>} )</pre></li>
@@ -350,11 +351,12 @@
 </dl>
 
 
+</main>
 </div> <!-- id="content" -->
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2023-01-29 17:09:45 </i>
+<i style="float:right;">Last updated 2023-01-29 17:40:54 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 

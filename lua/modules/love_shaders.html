@@ -31,17 +31,16 @@
 
 
 <!-- Menu -->
-
 <div id="navigation">
-<br/>
-<h1>Naikari Lua API</h1>
+<nav title="Naikari Lua API">
+<h2>Naikari Lua API</h2>
 
 <ul>
   <li><a href="../index.html">Index</a></li>
 </ul>
 
 
-<h2>Modules</h2>
+<h3>Modules</h3>
 <ul class="$(kind=='Topics' and '' or 'nowrap'">
   <li><a href="../modules/ai.html">ai</a></li>
   <li><a href="../modules/fleet.html">fleet</a></li>
@@ -91,11 +90,13 @@
   <li><a href="../modules/prng.html">prng</a></li>
 </ul>
 
+</nav>
 </div>
 
 <div id="content">
+<main>
 
-<h1>Module <code>love_shaders</code></h1>
+<h2>Module <code>love_shaders</code></h2>
 <p>A module containing a diversity of Love2D shaders for use in Naev.</p>
 <p> These are
 designed to be used with the different aspects of the VN framework.
@@ -105,7 +106,7 @@ of the effect. Furthermore, those that have a temporal component have a
 value. Temporal component can also be inverted by setting a negative value.</p>
 
 
-<h2><a href="#Functions">Functions</a></h2>
+<h3><a href="#Functions">Functions</a></h3>
 <table class="function_list">
 	<tr>
 	<td class="name" nowrap><a href="#shader2canvas">shader2canvas (shader[, width=love.w[, height=love.h]])</a></td>
@@ -152,7 +153,7 @@ value. Temporal component can also be inverted by setting a negative value.</p>
 	<td class="summary">Simple color modulation shader.</td>
 	</tr>
 </table>
-<h2><a href="#Tables">Tables</a></h2>
+<h3><a href="#Tables">Tables</a></h3>
 <table class="function_list">
 	<tr>
 	<td class="name" nowrap><a href="#shaderparams">shaderparams</a></td>
@@ -164,7 +165,7 @@ value. Temporal component can also be inverted by setting a negative value.</p>
 <br/>
 
 
-    <h2><a name="Functions"></a>Functions</h2>
+    <h3><a name="Functions"></a>Functions</h3>
 
     <dl class="function">
     <dt>
@@ -175,7 +176,7 @@ value. Temporal component can also be inverted by setting a negative value.</p>
     Renders a shader to a canvas.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">shader</span>
             <span class="types"><span class="type">Shader</span></span>
@@ -193,7 +194,7 @@ value. Temporal component can also be inverted by setting a negative value.</p>
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">Canvas</span></span>
@@ -212,7 +213,7 @@ value. Temporal component can also be inverted by setting a negative value.</p>
     Generates a paper-like image.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">width</span>
             <span class="types"><span class="type">number</span></span>
@@ -229,7 +230,7 @@ value. Temporal component can also be inverted by setting a negative value.</p>
         </li>
     </ul>
 
-    <h3>Returns:</h3>
+    <h4>Returns:</h4>
     <ol>
 
            <span class="types"><span class="type">Canvas</span></span>
@@ -248,7 +249,7 @@ value. Temporal component can also be inverted by setting a negative value.</p>
     Blur shader applied to an image.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">image</span>
             <span class="types"><span class="type">Drawable</span></span>
@@ -281,7 +282,7 @@ value. Temporal component can also be inverted by setting a negative value.</p>
     Creates an oldify effect, meant for full screen effects.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">params</span>
          Parameter table where "strength" field is used.
@@ -290,7 +291,7 @@ value. Temporal component can also be inverted by setting a negative value.</p>
 
 
 
-    <h3>See also:</h3>
+    <h4>See also:</h4>
     <ul>
          <a href="../modules/love_shaders.html#shaderparams">shaderparams</a>
     </ul>
@@ -305,7 +306,7 @@ value. Temporal component can also be inverted by setting a negative value.</p>
     A hologram effect, mainly meant for VN characters.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">params</span>
          Parameter table where "strength" field is used.
@@ -314,7 +315,7 @@ value. Temporal component can also be inverted by setting a negative value.</p>
 
 
 
-    <h3>See also:</h3>
+    <h4>See also:</h4>
     <ul>
          <a href="../modules/love_shaders.html#shaderparams">shaderparams</a>
     </ul>
@@ -329,7 +330,7 @@ value. Temporal component can also be inverted by setting a negative value.</p>
     A corruption effect applies a noisy pixelated effect.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">params</span>
          Parameter table where "strength" field is used.
@@ -338,7 +339,7 @@ value. Temporal component can also be inverted by setting a negative value.</p>
 
 
 
-    <h3>See also:</h3>
+    <h4>See also:</h4>
     <ul>
          <a href="../modules/love_shaders.html#shaderparams">shaderparams</a>
     </ul>
@@ -354,7 +355,7 @@ value. Temporal component can also be inverted by setting a negative value.</p>
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">params</span>
          Parameter table where "strength" and "speed" fields is used.
@@ -363,7 +364,7 @@ value. Temporal component can also be inverted by setting a negative value.</p>
 
 
 
-    <h3>See also:</h3>
+    <h4>See also:</h4>
     <ul>
          <a href="../modules/love_shaders.html#shaderparams">shaderparams</a>
     </ul>
@@ -379,7 +380,7 @@ value. Temporal component can also be inverted by setting a negative value.</p>
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">params</span>
          Parameter table where "strength" and "speed" fields is used.
@@ -388,7 +389,7 @@ value. Temporal component can also be inverted by setting a negative value.</p>
 
 
 
-    <h3>See also:</h3>
+    <h4>See also:</h4>
     <ul>
          <a href="../modules/love_shaders.html#shaderparams">shaderparams</a>
     </ul>
@@ -404,7 +405,7 @@ value. Temporal component can also be inverted by setting a negative value.</p>
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">params</span>
          Parameter table where "strength", "speed", and "density" fields is used.
@@ -413,7 +414,7 @@ value. Temporal component can also be inverted by setting a negative value.</p>
 
 
 
-    <h3>See also:</h3>
+    <h4>See also:</h4>
     <ul>
          <a href="../modules/love_shaders.html#shaderparams">shaderparams</a>
     </ul>
@@ -430,7 +431,7 @@ value. Temporal component can also be inverted by setting a negative value.</p>
 
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">params</span>
          Parameter table where "strength", "speed", "color", and "size" fields are used.
@@ -439,7 +440,7 @@ value. Temporal component can also be inverted by setting a negative value.</p>
 
 
 
-    <h3>See also:</h3>
+    <h4>See also:</h4>
     <ul>
          <a href="../modules/love_shaders.html#shaderparams">shaderparams</a>
     </ul>
@@ -454,7 +455,7 @@ value. Temporal component can also be inverted by setting a negative value.</p>
     Simple color modulation shader.
 
 
-    <h3>Parameters:</h3>
+    <h4>Parameters:</h4>
     <ul>
         <li><span class="parameter">params</span>
          Parameter table where "color" field is used.
@@ -463,7 +464,7 @@ value. Temporal component can also be inverted by setting a negative value.</p>
 
 
 
-    <h3>See also:</h3>
+    <h4>See also:</h4>
     <ul>
          <a href="../modules/love_shaders.html#shaderparams">shaderparams</a>
     </ul>
@@ -471,7 +472,7 @@ value. Temporal component can also be inverted by setting a negative value.</p>
 
 </dd>
 </dl>
-    <h2><a name="Tables"></a>Tables</h2>
+    <h3><a name="Tables"></a>Tables</h3>
 
     <dl class="function">
     <dt>
@@ -482,7 +483,7 @@ value. Temporal component can also be inverted by setting a negative value.</p>
     Shader common parameter table.
 
 
-    <h3>Fields:</h3>
+    <h4>Fields:</h4>
     <ul>
         <li><span class="parameter">strength</span>
             <span class="types"><span class="type">number</span></span>
@@ -510,11 +511,12 @@ value. Temporal component can also be inverted by setting a negative value.</p>
 </dl>
 
 
+</main>
 </div> <!-- id="content" -->
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2023-01-29 17:09:45 </i>
+<i style="float:right;">Last updated 2023-01-29 17:40:54 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 
