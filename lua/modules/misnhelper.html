@@ -45,8 +45,7 @@
   <li><a href="../modules/ai.html">ai</a></li>
   <li><a href="../modules/fleet.html">fleet</a></li>
   <li><a href="../modules/fmt.html">fmt</a></li>
-  <li><a href="../modules/lmusic.html">lmusic</a></li>
-  <li><a href="../modules/love_shaders.html">love_shaders</a></li>
+  <li><strong>misnhelper</strong></li>
   <li><a href="../modules/audio.html">audio</a></li>
   <li><a href="../modules/bkg.html">bkg</a></li>
   <li><a href="../modules/camera.html">camera</a></li>
@@ -86,7 +85,6 @@
   <li><a href="../modules/var.html">var</a></li>
   <li><a href="../modules/vec2.html">vec2</a></li>
   <li><a href="../modules/portrait.html">portrait</a></li>
-  <li><strong>pp_shaders</strong></li>
   <li><a href="../modules/prng.html">prng</a></li>
 </ul>
 
@@ -96,18 +94,29 @@
 <div id="content">
 <main>
 
-<h2>Module <code>pp_shaders</code></h2>
-<p>Post-processing shader library for Lua.</p>
-<p>
-<p>   This basically wraps around the shader framework and allows to easily create
-   some post-processing shaders with minimal code overhead.</p>
+<h2>Module <code>misnhelper</code></h2>
+<p>Generic mission-helping functions.</p>
+<p></p>
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">local mh = require &quot;misnhelper&quot;
+</pre>
+    </ul>
 
 
 <h3><a href="#Functions">Functions</a></h3>
 <table class="function_list">
 	<tr>
-	<td class="name" nowrap><a href="#newShader">newShader (fragcode)</a></td>
-	<td class="summary">Creates a new post-processing shader.</td>
+	<td class="name" nowrap><a href="#anyMissionActive">anyMissionActive (names)</a></td>
+	<td class="summary">Wrapper for player.misnActive that works on a table of missions.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#showWinMsg">showWinMsg ([congrats])</a></td>
+	<td class="summary">Shows a player message informing of a mission success.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#showFailMsg">showFailMsg ([reason])</a></td>
+	<td class="summary">Shows a player message informing of a mission failure.</td>
 	</tr>
 </table>
 
@@ -119,29 +128,93 @@
 
     <dl class="function">
     <dt>
-    <a name = "newShader"></a>
-    <strong>newShader (fragcode)</strong>
+    <a name = "anyMissionActive"></a>
+    <strong>anyMissionActive (names)</strong>
     </dt>
     <dd>
-    Creates a new post-processing shader.
+    Wrapper for player.misnActive that works on a table of missions.
 
 
     <h4>Parameters:</h4>
     <ul>
-        <li><span class="parameter">fragcode</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-         Fragment shader code.
+        <li><span class="parameter">names</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         Table of names of missions to check
         </li>
     </ul>
 
     <h4>Returns:</h4>
     <ol>
 
-        The newly created shader.
+           <span class="types"><span class="type">boolean</span></span>
+        true if any of the listed missions are active,
+      or false otherwise.
     </ol>
 
 
 
+    <h4>Usage:</h4>
+    <ul>
+        <pre class="example"><span class="keyword">if</span> mh.anyMissionActive({<span class="string">"Cargo"</span>, <span class="string">"Cargo Rush"</span>}) <span class="keyword">then</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "showWinMsg"></a>
+    <strong>showWinMsg ([congrats])</strong>
+    </dt>
+    <dd>
+    Shows a player message informing of a mission success.
+<p>Note: this does not actually end the mission. It should be followed
+up with a misn.finish(true) call.
+
+
+
+    <h4>Parameters:</h4>
+    <ul>
+        <li><span class="parameter">congrats</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Congratulation message for winning.
+         (<em>optional</em>)
+        </li>
+    </ul>
+
+
+
+
+    <h4>Usage:</h4>
+    <ul>
+        <pre class="example">mh.showWinMsg(_(<span class="string">"You delivered the cake!"</span>))</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "showFailMsg"></a>
+    <strong>showFailMsg ([reason])</strong>
+    </dt>
+    <dd>
+    Shows a player message informing of a mission failure.
+<p>Note: this does not actually end the mission. It should be followed
+up with a misn.finish(false) call.
+
+
+
+    <h4>Parameters:</h4>
+    <ul>
+        <li><span class="parameter">reason</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         The reason the player failed the mission.
+         (<em>optional</em>)
+        </li>
+    </ul>
+
+
+
+
+    <h4>Usage:</h4>
+    <ul>
+        <pre class="example">showFailMsg(_(<span class="string">"You failed to deliver the cake!"</span>))</pre>
+    </ul>
 
 </dd>
 </dl>
@@ -152,7 +225,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2023-03-28 13:01:28 </i>
+<i style="float:right;">Last updated 2023-03-28 20:33:30 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 
