@@ -47,7 +47,7 @@
   <li><a href="../modules/fmt.html">fmt</a></li>
   <li><a href="../modules/misnhelper.html">misnhelper</a></li>
   <li><a href="../modules/audio.html">audio</a></li>
-  <li><strong>bkg</strong></li>
+  <li><a href="../modules/bkg.html">bkg</a></li>
   <li><a href="../modules/camera.html">camera</a></li>
   <li><a href="../modules/canvas.html">canvas</a></li>
   <li><a href="../modules/colour.html">colour</a></li>
@@ -86,7 +86,7 @@
   <li><a href="../modules/vec2.html">vec2</a></li>
   <li><a href="../modules/portrait.html">portrait</a></li>
   <li><a href="../modules/prng.html">prng</a></li>
-  <li><a href="../modules/tablehelper.html">tablehelper</a></li>
+  <li><strong>tablehelper</strong></li>
 </ul>
 
 </nav>
@@ -95,24 +95,25 @@
 <div id="content">
 <main>
 
-<h2>Module <code>bkg</code></h2>
-<p>Lua bindings to interact with the background.</p>
-<p>
-<p> An example would be:
- <pre>
- </pre>
-`</p>
+<h2>Module <code>tablehelper</code></h2>
+<p>Functions which assist with working with tables.</p>
+<p></p>
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">local tablehelper = require &quot;tablehelper&quot;
+</pre>
+    </ul>
 
 
 <h3><a href="#Functions">Functions</a></h3>
 <table class="function_list">
 	<tr>
-	<td class="name" nowrap><a href="#clear">clear ()</a></td>
-	<td class="summary">Clears any backgrounds that may currently be displaying.</td>
+	<td class="name" nowrap><a href="#keys">keys (T)</a></td>
+	<td class="summary">Inverts a table's values so that keys become values and vice-versa.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#image">image (image, x, y, move, scale[, col[, foreground=false]])</a></td>
-	<td class="summary">Adds a background image.</td>
+	<td class="name" nowrap><a href="#inTable">inTable (T, x)</a></td>
+	<td class="summary">Returns whether or not something is in a table as a value.</td>
 	</tr>
 </table>
 
@@ -124,78 +125,73 @@
 
     <dl class="function">
     <dt>
-    <a name = "clear"></a>
-    <strong>clear ()</strong>
+    <a name = "keys"></a>
+    <strong>keys (T)</strong>
     </dt>
     <dd>
-    Clears any backgrounds that may currently be displaying.
-
-
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "image"></a>
-    <strong>image (image, x, y, move, scale[, col[, foreground=false]])</strong>
-    </dt>
-    <dd>
-    Adds a background image.
-<p> If the colour parameter is a boolean it's treated as the foreground parameter instead.
+    Inverts a table's values so that keys become values and vice-versa.
+<p>This returns a table of keys: each value of the original table becomes
+a key, and each associated key of the original table becomes a value.
+For example, if a list contains the entries "foo", "bar", and "baz",
+then a keys table for that list would assign the value 1 to the key
+"foo", the value 2 to the key "bar", and the value 3 to the key "baz".
 
 
 
     <h4>Parameters:</h4>
     <ul>
-        <li><span class="parameter">image</span>
-            <span class="types"><span class="type">Tex</span></span>
-         Image to use.
-        </li>
-        <li><span class="parameter">x</span>
-            <span class="types"><span class="type">number</span></span>
-         X position.
-        </li>
-        <li><span class="parameter">y</span>
-            <span class="types"><span class="type">number</span></span>
-         Y position.
-        </li>
-        <li><span class="parameter">move</span>
-            <span class="types"><span class="type">number</span></span>
-         Fraction of a pixel to move when the player moves one pixel.
-        </li>
-        <li><span class="parameter">scale</span>
-            <span class="types"><span class="type">number</span></span>
-         How much to scale the image.
-        </li>
-        <li><span class="parameter">col</span>
-            <span class="types"><span class="type">Colour</span></span>
-         Colour to tint image.
-         (<em>optional</em>)
-        </li>
-        <li><span class="parameter">foreground</span>
-            <span class="types"><span class="type">boolean</span></span>
-         Whether or not it should be rendered above the stars.
-         (<em>default</em> false)
+        <li><span class="parameter">T</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         Table to get the keys table of.
         </li>
     </ul>
 
     <h4>Returns:</h4>
     <ol>
 
-           <span class="types"><span class="type">number</span></span>
-        ID of the background.
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+        The keys table.
     </ol>
 
 
 
     <h4>Usage:</h4>
     <ul>
-        <li><pre class="example">bkg.image( img, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.1</span>, <span class="number">1.</span> ) <span class="comment">-- Adds the image without scaling that moves at 0.1 the player speed</span></pre></li>
-        <li><pre class="example">bkg.image( img, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.1</span>, <span class="number">1.</span>, <span class="keyword">true</span> ) <span class="comment">-- Now on the foreground</span></pre></li>
-        <li><pre class="example">bkg.image( img, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.1</span>, <span class="number">1.</span>, col.new(<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>) ) <span class="comment">-- Now with colour</span></pre></li>
-        <li><pre class="example">bkg.image( img, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.1</span>, <span class="number">1.</span>, col.new(<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>), <span class="keyword">true</span> ) <span class="comment">-- Now with colour and on the foreground</span></pre></li>
+        <pre class="example">i = tablehelper.keys({<span class="string">"foo"</span>, <span class="string">"bar"</span>, <span class="string">"baz"</span>})[<span class="string">"bar"</span>] <span class="comment">-- i = 2</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "inTable"></a>
+    <strong>inTable (T, x)</strong>
+    </dt>
+    <dd>
+    Returns whether or not something is in a table as a value.
+
+
+    <h4>Parameters:</h4>
+    <ul>
+        <li><span class="parameter">T</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         The table to search for the value in.
+        </li>
+        <li><span class="parameter">x</span>
+         The value to search for.
+        </li>
+    </ul>
+
+    <h4>Returns:</h4>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+        Whether or not x is a value in T.
+    </ol>
+
+
+
+    <h4>Usage:</h4>
+    <ul>
+        <pre class="example"><span class="keyword">if</span> tablehelper.inTable(<span class="string">"foo"</span>) <span class="keyword">then</span> <span class="comment">-- "foo" is in the table</span></pre>
     </ul>
 
 </dd>
