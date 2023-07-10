@@ -112,11 +112,11 @@
 	<td class="summary">Gets the dimensions of the Naev window.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#renderTex">renderTex (tex, pos_x, pos_y[, sprite_x=0[, sprite_y=0[, colour]]])</a></td>
+	<td class="name" nowrap><a href="#renderTex">renderTex (tex, x, y[, sp_x=0[, sp_y=0[, color]]])</a></td>
 	<td class="summary">Renders a texture.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#renderTexRaw">renderTexRaw (tex, pos_x, pos_y, pos_w, pos_h, sprite_x, sprite_y, tex_x, tex_y, tex_w, tex_h[, colour[, angle]])</a></td>
+	<td class="name" nowrap><a href="#renderTexRaw">renderTexRaw (tex, x, y, w, h, sp_x, sp_y, tex_x, tex_y, tex_w, tex_h[, color[, angle]])</a></td>
 	<td class="summary">Renders a texture using the core render function.</td>
 	</tr>
 	<tr>
@@ -236,7 +236,7 @@
 </dd>
     <dt>
     <a name = "renderTex"></a>
-    <strong>renderTex (tex, pos_x, pos_y[, sprite_x=0[, sprite_y=0[, colour]]])</strong>
+    <strong>renderTex (tex, x, y[, sp_x=0[, sp_y=0[, color]]])</strong>
     </dt>
     <dd>
     Renders a texture.
@@ -250,27 +250,27 @@
             <span class="types"><span class="type">Tex</span></span>
          Texture to render.
         </li>
-        <li><span class="parameter">pos_x</span>
+        <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
          X position to render texture at.
         </li>
-        <li><span class="parameter">pos_y</span>
+        <li><span class="parameter">y</span>
             <span class="types"><span class="type">number</span></span>
          Y position to render texture at.
         </li>
-        <li><span class="parameter">sprite_x</span>
-            <span class="types"><span class="type">int</span></span>
+        <li><span class="parameter">sp_x</span>
+            <span class="types"><span class="type">number</span></span>
          X sprite to render.
          (<em>default</em> 0)
         </li>
-        <li><span class="parameter">sprite_y</span>
-            <span class="types"><span class="type">int</span></span>
+        <li><span class="parameter">sp_y</span>
+            <span class="types"><span class="type">number</span></span>
          Y sprite to render.
          (<em>default</em> 0)
         </li>
-        <li><span class="parameter">colour</span>
+        <li><span class="parameter">color</span>
             <span class="types"><span class="type">Colour</span></span>
-         Colour to use when rendering.
+         Color to use when rendering.
          (<em>optional</em>)
         </li>
     </ul>
@@ -289,7 +289,7 @@
 </dd>
     <dt>
     <a name = "renderTexRaw"></a>
-    <strong>renderTexRaw (tex, pos_x, pos_y, pos_w, pos_h, sprite_x, sprite_y, tex_x, tex_y, tex_w, tex_h[, colour[, angle]])</strong>
+    <strong>renderTexRaw (tex, x, y, w, h, sp_x, sp_y, tex_x, tex_y, tex_w, tex_h[, color[, angle]])</strong>
     </dt>
     <dd>
     Renders a texture using the core render function.
@@ -305,27 +305,27 @@
             <span class="types"><span class="type">Tex</span></span>
          Texture to render.
         </li>
-        <li><span class="parameter">pos_x</span>
+        <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
          X position to render texture at.
         </li>
-        <li><span class="parameter">pos_y</span>
+        <li><span class="parameter">y</span>
             <span class="types"><span class="type">number</span></span>
          Y position to render texture at.
         </li>
-        <li><span class="parameter">pos_w</span>
+        <li><span class="parameter">w</span>
             <span class="types"><span class="type">number</span></span>
          Width of the image on screen.
         </li>
-        <li><span class="parameter">pos_h</span>
+        <li><span class="parameter">h</span>
             <span class="types"><span class="type">number</span></span>
          Height of the image on screen.
         </li>
-        <li><span class="parameter">sprite_x</span>
+        <li><span class="parameter">sp_x</span>
             <span class="types"><span class="type">number</span></span>
          X sprite to render.
         </li>
-        <li><span class="parameter">sprite_y</span>
+        <li><span class="parameter">sp_y</span>
             <span class="types"><span class="type">number</span></span>
          Y sprite to render.
         </li>
@@ -339,15 +339,17 @@
         </li>
         <li><span class="parameter">tex_w</span>
             <span class="types"><span class="type">number</span></span>
-         Sprite width to display as [-1.:1.]. Note if negative, it will flip the image horizontally.
+         Sprite width to display as [-1.:1.].
+       Note: if negative, it will flip the image horizontally.
         </li>
         <li><span class="parameter">tex_h</span>
             <span class="types"><span class="type">number</span></span>
-         Sprite height to display as [-1.:1.] Note if negative, it will flip the image vertically.
+         Sprite height to display as [-1.:1.].
+       Note: if negative, it will flip the image vertically.
         </li>
-        <li><span class="parameter">colour</span>
+        <li><span class="parameter">color</span>
             <span class="types"><span class="type">Colour</span></span>
-         Colour to use when rendering.
+         Color to use when rendering.
          (<em>optional</em>)
         </li>
         <li><span class="parameter">angle</span>
@@ -1066,7 +1068,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2023-07-09 21:53:57 </i>
+<i style="float:right;">Last updated 2023-07-09 22:01:47 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 
